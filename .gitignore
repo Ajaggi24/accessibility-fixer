@@ -1,0 +1,6 @@
+node_modules/
+.env
+target-site-fixed/
+reports/*.json
+!reports/.gitkeep
+.DS_Store
