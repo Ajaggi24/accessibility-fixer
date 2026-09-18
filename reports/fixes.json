@@ -3,592 +3,1115 @@
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".logo > span",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span>Adventures</span>",
+    "fix": "color: #e7aa63",
+    "reasoning": "WCAG 1.4.3: text was 2.05:1 against its background (#1b6b3a), below the required 3:1. Darkening/lightening the text to #e7aa63 raises it to 3.22:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#e7aa63"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(2) > .pkg-body > .badge-sale.pkg-badge",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
+    "fix": "color: #c12121",
+    "reasoning": "WCAG 1.4.3: text was 3.95:1 against its background (#fee2e2), below the required 4.5:1. Darkening/lightening the text to #c12121 raises it to 4.90:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#c12121"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(4) > .pkg-body > .badge-sale.pkg-badge",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
+    "fix": "color: #c12121",
+    "reasoning": "WCAG 1.4.3: text was 3.95:1 against its background (#fee2e2), below the required 4.5:1. Darkening/lightening the text to #c12121 raises it to 4.90:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#c12121"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".ticker-item:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"ticker-item\">\"Absolutely life-changing!\" — <strong>Sarah M., New York</strong></span>",
+    "fix": "color: #cfe0d6",
+    "reasoning": "WCAG 1.4.3: text was 3.58:1 against its background (#1b6b3a), below the required 4.5:1. Darkening/lightening the text to #cfe0d6 raises it to 4.76:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cfe0d6"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".ticker-item:nth-child(1) > strong",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<strong>Sarah M., New York</strong>",
+    "fix": "color: #cfe0d6",
+    "reasoning": "WCAG 1.4.3: text was 4.26:1 against its background (#1b6b3a), below the required 4.5:1. Darkening/lightening the text to #cfe0d6 raises it to 4.76:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cfe0d6"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".ticker-item:nth-child(2)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"ticker-item\">\"Best two weeks of my life.\" — <strong>James K., London</strong></span>",
+    "fix": "color: #cfe0d6",
+    "reasoning": "WCAG 1.4.3: text was 3.58:1 against its background (#1b6b3a), below the required 4.5:1. Darkening/lightening the text to #cfe0d6 raises it to 4.76:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cfe0d6"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".ticker-item:nth-child(2) > strong",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<strong>James K., London</strong>",
+    "fix": "color: #cfe0d6",
+    "reasoning": "WCAG 1.4.3: text was 4.26:1 against its background (#1b6b3a), below the required 4.5:1. Darkening/lightening the text to #cfe0d6 raises it to 4.76:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cfe0d6"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".review-card:nth-child(1) > .review-loc",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-loc\">Stockholm, Sweden — Amazon Rainforest, 2024</div>",
+    "fix": "color: #687281",
+    "reasoning": "WCAG 1.4.3: text was 2.56:1 against its background (#ffffff), below the required 4.5:1. Darkening/lightening the text to #687281 raises it to 4.87:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#687281"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".review-card:nth-child(2) > .review-loc",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-loc\">Lyon, France — Patagonia Expedition, 2025</div>",
+    "fix": "color: #687281",
+    "reasoning": "WCAG 1.4.3: text was 2.56:1 against its background (#ffffff), below the required 4.5:1. Darkening/lightening the text to #687281 raises it to 4.87:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#687281"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "p:nth-child(10)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p style=\"font-size:0.82rem;color:#888;margin-bottom:14px;\">After clicking the orange button, you will receive a confirmation at the email address above.</p>",
+    "fix": "color: #707070",
+    "reasoning": "WCAG 1.4.3: text was 3.54:1 against its background (#ffffff), below the required 4.5:1. Darkening/lightening the text to #707070 raises it to 4.95:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#707070"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".fine-print",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p class=\"fine-print\">",
+    "fix": "color: #737373",
+    "reasoning": "WCAG 1.4.3: text was 2.32:1 against its background (#ffffff), below the required 4.5:1. Darkening/lightening the text to #737373 raises it to 4.74:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#737373"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".nl-form > button[type=\"submit\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<button type=\"submit\">Subscribe</button>",
+    "fix": "color: #262626",
+    "reasoning": "WCAG 1.4.3: text was 3.19:1 against its background (#d97706), below the required 4.5:1. Darkening/lightening the text to #262626 raises it to 4.75:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#262626"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-desc",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p class=\"footer-desc\">The world's leading boutique adventure travel company, inspiring bold journeys since 2009. IATA accredited. ATOL protected.</p>",
+    "fix": "color: #82858d",
+    "reasoning": "WCAG 1.4.3: text was 3.33:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #82858d raises it to 4.81:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#82858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Africa</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Asia &amp; Pacific</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">The Americas</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Europe &amp; Arctic</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Polar Expeditions</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">About Us</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Our Guides</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Sustainability</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Press &amp; Media</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"careers.example.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://careers.example.com\" target=\"_blank\">Careers</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">FAQ</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Contact Us</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\">Travel Insurance</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"visainfo.example.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://visainfo.example.com\" target=\"_blank\">Visa Information</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\" id=\"footer-link-acc\">Accessibility</a>",
+    "fix": "color: #81858d",
+    "reasoning": "WCAG 1.4.3: text was 3.56:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #81858d raises it to 4.79:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#81858d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-bottom > div:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div>© 2025 Summit Adventures LLC. All rights reserved.</div>",
+    "fix": "color: #83878f",
+    "reasoning": "WCAG 1.4.3: text was 3.22:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #83878f raises it to 4.92:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#83878f"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"instagram.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://instagram.com\" target=\"_blank\" class=\"social-link\" title=\"Instagram\">IG</a>",
+    "fix": "color: #93969d",
+    "reasoning": "WCAG 1.4.3: text was 4.16:1 against its background (#242a38), below the required 4.5:1. Darkening/lightening the text to #93969d raises it to 4.85:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#93969d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"facebook.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://facebook.com\" target=\"_blank\" class=\"social-link\" title=\"Facebook\">FB</a>",
+    "fix": "color: #93969d",
+    "reasoning": "WCAG 1.4.3: text was 4.16:1 against its background (#242a38), below the required 4.5:1. Darkening/lightening the text to #93969d raises it to 4.85:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#93969d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"twitter.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://twitter.com\" target=\"_blank\" class=\"social-link\" title=\"Twitter/X\">TW</a>",
+    "fix": "color: #93969d",
+    "reasoning": "WCAG 1.4.3: text was 4.16:1 against its background (#242a38), below the required 4.5:1. Darkening/lightening the text to #93969d raises it to 4.85:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#93969d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": "a[href$=\"youtube.com\"]",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"https://youtube.com\" target=\"_blank\" class=\"social-link\" title=\"YouTube\">YT</a>",
+    "fix": "color: #93969d",
+    "reasoning": "WCAG 1.4.3: text was 4.16:1 against its background (#242a38), below the required 4.5:1. Darkening/lightening the text to #93969d raises it to 4.85:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#93969d"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-tiny",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p class=\"footer-tiny\">",
+    "fix": "color: #84878f",
+    "reasoning": "WCAG 1.4.3: text was 1.88:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #84878f raises it to 4.94:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#84878f"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-tiny > a[href=\"#\"]:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\" id=\"footer-link-acc\" style=\"color:inherit;\">Terms</a>",
+    "fix": "color: #84878f",
+    "reasoning": "WCAG 1.4.3: text was 1.88:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #84878f raises it to 4.94:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#84878f"
+    }
   },
   {
     "rule": "color-contrast",
     "category": "contrast",
     "element": ".footer-tiny > a[href=\"#\"]:nth-child(2)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#\" style=\"color:inherit;\">Privacy</a>",
+    "fix": "color: #84878f",
+    "reasoning": "WCAG 1.4.3: text was 1.88:1 against its background (#111827), below the required 4.5:1. Darkening/lightening the text to #84878f raises it to 4.94:1 — the smallest color change that passes, so the design barely shifts.",
+    "confidence": "high",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#84878f"
+    }
+  },
+  {
+    "rule": "document-title",
+    "category": "uncategorized",
+    "element": "html",
+    "snippet": "<html lang=\"en\">",
+    "fix": "<title>The World is Waiting. Are You?</title>",
+    "reasoning": "WCAG 2.4.2: the page has no <title>, so browser tabs, bookmarks and screen readers all announce the raw URL. \"The World is Waiting. Are You?\" is taken from the page's own main heading.",
+    "confidence": "high",
+    "apply": {
+      "action": "insertTitle",
+      "value": "The World is Waiting. Are You?"
+    }
   },
   {
     "rule": "heading-order",
     "category": "heading-order",
     "element": "h4",
-    "fix": "Adjust heading level to preserve document order",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<h4 class=\"pkg-title\">Patagonia Expedition</h4>",
+    "fix": "<h4> -> <h3>",
+    "reasoning": "WCAG 1.3.1: heading levels must step down one at a time. This is an <h4> directly after an <h2>, so screen-reader users hear a gap in the outline. Changing it to <h3> keeps the same visual weight class but repairs the document structure.",
+    "confidence": "high",
+    "apply": {
+      "action": "renameTag",
+      "tag": "h3"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": ".img-himalaya",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/himalaya.webp\" class=\"pkg-img img-himalaya\">",
+    "fix": "alt=\"Himalayan Trek\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Himalayan Trek\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Himalayan Trek"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": ".img-amazon",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/amazon.webp\" class=\"pkg-img img-amazon\">",
+    "fix": "alt=\"Amazon Rainforest\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Amazon Rainforest\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Amazon Rainforest"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": ".img-patagonia",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/patagonia.webp\" class=\"pkg-img img-patagonia\">",
+    "fix": "alt=\"Patagonia Expedition\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Patagonia Expedition\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Patagonia Expedition"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": ".img-sahara",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/sahara.webp\" class=\"pkg-img img-sahara\">",
+    "fix": "alt=\"Sahara Desert Crossing\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Sahara Desert Crossing\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Sahara Desert Crossing"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": "img[src$=\"gallery-main.webp\"]",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-main.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": "img[src$=\"gallery-2.webp\"]",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-2.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": "img[src$=\"gallery-3.webp\"]",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-3.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": "img[src$=\"gallery-4.webp\"]",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-4.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "image-alt",
     "category": "alt-text",
     "element": "img[src$=\"gallery-5.webp\"]",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-5.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "label",
     "category": "labels",
     "element": "div:nth-child(8) > input[type=\"checkbox\"]",
-    "fix": "aria-label=\"Descriptive label\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<input type=\"checkbox\" style=\"margin-top:3px;\">",
+    "fix": "aria-label=\"I have read and agree to the Terms & Conditions and Privacy Policy.\"",
+    "reasoning": "WCAG 4.1.2: this checkbox field had no name a screen reader could announce — it would just say \"edit text, blank\". Naming it \"I have read and agree to the Terms & Conditions and Privacy Policy.\" (taken from the visible text beside it) makes it announceable without changing the visual design.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "aria-label",
+      "value": "I have read and agree to the Terms & Conditions and Privacy Policy."
+    }
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": "#home",
+    "snippet": "<section class=\"hero\" id=\"home\">",
+    "fix": "Wrap #home in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": ".stats-bar",
+    "snippet": "<div class=\"stats-bar\" role=\"presentation\">",
+    "fix": "Wrap .stats-bar in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": ".newsletter > h2",
+    "snippet": "<h2>Stay in the Loop</h2>",
+    "fix": "Wrap .newsletter > h2 in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": ".newsletter > p:nth-child(2)",
+    "snippet": "<p>Exclusive deals, new destinations, and trip reports delivered to your inbox each month.</p>",
+    "fix": "Wrap .newsletter > p:nth-child(2) in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": "input[placeholder=\"Your email address\"]",
+    "snippet": "<input type=\"email\" id=\"email\" placeholder=\"Your email address\">",
+    "fix": "Wrap input[placeholder=\"Your email address\"] in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
+  },
+  {
+    "rule": "region",
+    "category": "heading-order",
+    "element": ".legal",
+    "snippet": "<p class=\"legal\">",
+    "fix": "Wrap .legal in a landmark (<main>, <nav>, or <aside>)",
+    "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+    "confidence": "low"
   },
   {
     "rule": "select-name | WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Select.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
     "category": "labels",
     "element": "#dest-select",
-    "fix": "aria-label=\"Descriptive label\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<select id=\"dest-select\">",
+    "fix": "aria-label=\"Choose Your Destination\"",
+    "reasoning": "WCAG 4.1.2: this dropdown had no name a screen reader could announce — it would just say \"edit text, blank\". Naming it \"Choose Your Destination\" (taken from the visible text beside it) makes it announceable without changing the visual design.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "aria-label",
+      "value": "Choose Your Destination"
+    }
   },
   {
     "rule": "tabindex",
     "category": "keyboard-focus",
     "element": "#lname",
+    "snippet": "<input type=\"text\" id=\"lname\" tabindex=\"10\" placeholder=\"e.g. Johnson\">",
     "fix": "tabindex=\"0\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "low"
+    "reasoning": "WCAG 2.4.3: tabindex=\"10\" yanks this control out of the natural tab order, so keyboard users jump around the page unpredictably. tabindex=\"0\" puts it back in normal document order.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "tabindex",
+      "value": "0"
+    }
   },
   {
     "rule": "tabindex",
     "category": "keyboard-focus",
     "element": "#phone",
+    "snippet": "<input type=\"tel\" id=\"phone\" tabindex=\"5\" placeholder=\"+1 (555) 000-0000\">",
     "fix": "tabindex=\"0\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "low"
+    "reasoning": "WCAG 2.4.3: tabindex=\"5\" yanks this control out of the natural tab order, so keyboard users jump around the page unpredictably. tabindex=\"0\" puts it back in normal document order.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "tabindex",
+      "value": "0"
+    }
+  },
+  {
+    "rule": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl",
+    "category": "uncategorized",
+    "element": "html > head",
+    "snippet": "<head>\n    <meta charset=\"UTF-8\">\n   ...</head>",
+    "fix": "<title>The World is Waiting. Are You?</title>",
+    "reasoning": "WCAG 2.4.2: the page has no <title>, so browser tabs, bookmarks and screen readers all announce the raw URL. \"The World is Waiting. Are You?\" is taken from the page's own main heading.",
+    "confidence": "high",
+    "apply": {
+      "action": "insertTitle",
+      "value": "The World is Waiting. Are You?"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
     "category": "contrast",
     "element": "html > body > header > a > span",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span>Adventures</span>",
+    "fix": "background-color: #00501f",
+    "reasoning": "WCAG 1.4.3: the text color here is fixed by the brand, so pa11y recommends darkening the background to #00501f to reach 3:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "background-color",
+      "value": "#00501f"
+    }
   },
   {
     "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name",
     "category": "labels",
     "element": "html > body > header > div > div > input",
-    "fix": "aria-label=\"Descriptive label\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<input type=\"search\" placeholder=\"Search destinations...\">",
+    "fix": "aria-label=\"Search destinations\"",
+    "reasoning": "WCAG 4.1.2: this search field had no name a screen reader could announce — it would just say \"edit text, blank\". Naming it \"Search destinations\" (taken from the visible text beside it) makes it announceable without changing the visual design.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "aria-label",
+      "value": "Search destinations"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "html > body > header > div > div > button",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<button type=\"button\">🔍</button>",
+    "fix": "background-color: #b46100",
+    "reasoning": "WCAG 1.4.3: the text color here is fixed by the brand, so pa11y recommends darkening the background to #b46100 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "background-color",
+      "value": "#b46100"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#home > div > div:nth-child(4) > a:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<a href=\"#packages\" class=\"btn-primary\">Explore Packages</a>",
+    "fix": "background-color: #b46100",
+    "reasoning": "WCAG 1.4.3: the text color here is fixed by the brand, so pa11y recommends darkening the background to #b46100 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "background-color",
+      "value": "#b46100"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#packages > div:nth-child(5) > div:nth-child(1) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/himalaya.webp\" class=\"pkg-img img-himalaya\">",
+    "fix": "alt=\"Himalayan Trek\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Himalayan Trek\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Himalayan Trek"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#packages > div:nth-child(5) > div:nth-child(2) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/amazon.webp\" class=\"pkg-img img-amazon\">",
+    "fix": "alt=\"Amazon Rainforest\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Amazon Rainforest\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Amazon Rainforest"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#packages > div:nth-child(5) > div:nth-child(2) > div > span",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
+    "fix": "color: #cf1919",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #cf1919 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cf1919"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#packages > div:nth-child(5) > div:nth-child(3) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/patagonia.webp\" class=\"pkg-img img-patagonia\">",
+    "fix": "alt=\"Patagonia Expedition\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Patagonia Expedition\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Patagonia Expedition"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#packages > div:nth-child(5) > div:nth-child(4) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/sahara.webp\" class=\"pkg-img img-sahara\">",
+    "fix": "alt=\"Sahara Desert Crossing\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Sahara Desert Crossing\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Sahara Desert Crossing"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#packages > div:nth-child(5) > div:nth-child(4) > div > span",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
+    "fix": "color: #cf1919",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #cf1919 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#cf1919"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(4)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-loc\">Stockholm, Sweden — Amazon Rain...</div>",
+    "fix": "color: #68778c",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #68778c to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#68778c"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(4)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-loc\">Lyon, France — Patagonia Expedi...</div>",
+    "fix": "color: #68778c",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #68778c to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#68778c"
+    }
   },
   {
     "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
     "category": "labels",
     "element": "#fname",
-    "fix": "aria-label=\"Descriptive label\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<input type=\"text\" id=\"fname\" placeholder=\"e.g. Sarah\" autocomplete=\"off\">",
+    "fix": "aria-label=\"Sarah\"",
+    "reasoning": "WCAG 4.1.2: this text field had no name a screen reader could announce — it would just say \"edit text, blank\". Naming it \"Sarah\" (taken from the visible text beside it) makes it announceable without changing the visual design.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "aria-label",
+      "value": "Sarah"
+    }
   },
   {
     "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
     "category": "labels",
     "element": "#contact > form > div:nth-child(8) > input",
-    "fix": "aria-label=\"Descriptive label\"",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<input type=\"checkbox\" style=\"margin-top:3px;\">",
+    "fix": "aria-label=\"I have read and agree to the Terms & Conditions and Privacy Policy.\"",
+    "reasoning": "WCAG 4.1.2: this checkbox field had no name a screen reader could announce — it would just say \"edit text, blank\". Naming it \"I have read and agree to the Terms & Conditions and Privacy Policy.\" (taken from the visible text beside it) makes it announceable without changing the visual design.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "aria-label",
+      "value": "I have read and agree to the Terms & Conditions and Privacy Policy."
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#contact > form > p:nth-child(10)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p style=\"font-size:0.82rem;color:#888;margin-bottom:14px;\">After clicking the orange butto...</p>",
+    "fix": "color: #767676",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #767676 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#767676"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#contact > form > p:nth-child(12)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<p class=\"fine-print\">\n                By submitting ...</p>",
+    "fix": "color: #767676",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #767676 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#767676"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#gallery > div:nth-child(3) > div:nth-child(1) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-main.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#gallery > div:nth-child(3) > div:nth-child(2) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-2.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#gallery > div:nth-child(3) > div:nth-child(3) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-3.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#gallery > div:nth-child(3) > div:nth-child(4) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-4.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
     "category": "alt-text",
     "element": "#gallery > div:nth-child(3) > div:nth-child(5) > img",
-    "fix": "Descriptive alt text for this image",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "high"
+    "snippet": "<img src=\"assets/gallery-5.webp\">",
+    "fix": "alt=\"Adventures in Pictures\"",
+    "reasoning": "WCAG 1.1.1: a non-text element needs a text alternative. Described from the heading/title text in the same card (\"Adventures in Pictures\"), so the alt text matches what the image is actually illustrating.",
+    "confidence": "high",
+    "apply": {
+      "action": "setAttr",
+      "attr": "alt",
+      "value": "Adventures in Pictures"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "html > body > section:nth-child(5) > form > button",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<button type=\"submit\">Subscribe</button>",
+    "fix": "background-color: #b46100",
+    "reasoning": "WCAG 1.4.3: the text color here is fixed by the brand, so pa11y recommends darkening the background to #b46100 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "background-color",
+      "value": "#b46100"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-stars\" aria-hidden=\"true\">★★★★★</div>",
+    "fix": "color: #b46100",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #b46100 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#b46100"
+    }
   },
   {
     "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
     "category": "contrast",
     "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)",
-    "fix": "#595959",
-    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
-    "confidence": "medium"
+    "snippet": "<div class=\"review-stars\" aria-hidden=\"true\">★★★★★</div>",
+    "fix": "color: #b46100",
+    "reasoning": "WCAG 1.4.3: pa11y computed the rendered colors and recommends text #b46100 to reach 4.5:1.",
+    "confidence": "medium",
+    "apply": {
+      "action": "setStyle",
+      "prop": "color",
+      "value": "#b46100"
+    }
   }
 ]

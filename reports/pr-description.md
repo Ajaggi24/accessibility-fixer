@@ -1,29 +1,33 @@
 ## Accessibility fixes
 
-This PR fixes **0 of 85** accessibility violations found by pa11y + axe-core.
+This PR fixes **74 of 85** accessibility violations found by pa11y + axe-core.
 
 - **Target:** http://localhost:8001/
-- **Fixer mode:** mock (placeholder fixes — not real LLM output yet)
-- **Fixes proposed:** 74
-- **Auto-applied (high/medium):** 72
-- **Held for human review (low):** 2
+- **Fixer mode:** rules
+- **Fixes proposed:** 82
+- **Auto-applied (high/medium):** 76
+- **Held for human review (low):** 6
 
 ### Before / after by category
 
 | Category | Before | After | Fixed |
 |---|---:|---:|---:|
-| contrast | 48 | 48 | 0 |
-| uncategorized | 11 | 11 | 0 |
-| heading-order | 1 | 1 | 0 |
-| alt-text | 18 | 18 | 0 |
-| labels | 5 | 5 | 0 |
-| keyboard-focus | 2 | 2 | 0 |
-| **Total** | **85** | **85** | **0** |
+| contrast | 48 | 2 | 46 |
+| uncategorized | 5 | 3 | 2 |
+| heading-order | 7 | 6 | 1 |
+| alt-text | 18 | 0 | 18 |
+| labels | 5 | 0 | 5 |
+| keyboard-focus | 2 | 0 | 2 |
+| **Total** | **85** | **11** | **74** |
 
 ### Flagged for human review
 
-- `tabindex` on `#lname` — PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.
-- `tabindex` on `#phone` — PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.
+- `region` on `#home` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
+- `region` on `.stats-bar` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
+- `region` on `.newsletter > h2` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
+- `region` on `.newsletter > p:nth-child(2)` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
+- `region` on `input[placeholder="Your email address"]` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
+- `region` on `.legal` — WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.
 
 ---
-_Generated 2026-09-18T20:09:33.104Z by run-pipeline.js_
+_Generated 2026-09-18T20:44:37.709Z by run-pipeline.js_

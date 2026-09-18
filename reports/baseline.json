@@ -6,7 +6,16 @@
     "snippet": "<span>Adventures</span>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#d97706",
+      "bgColor": "#1b6b3a",
+      "contrastRatio": 2.05,
+      "fontSize": "16.8pt (22.4px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "3:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -15,7 +24,16 @@
     "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#dc2626",
+      "bgColor": "#fee2e2",
+      "contrastRatio": 3.95,
+      "fontSize": "8.6pt (11.52px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -24,7 +42,16 @@
     "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#dc2626",
+      "bgColor": "#fee2e2",
+      "contrastRatio": 3.95,
+      "fontSize": "8.6pt (11.52px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -33,7 +60,16 @@
     "snippet": "<span class=\"ticker-item\">\"Absolutely life-changing!\" — <strong>Sarah M., New York</strong></span>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#a8c7b4",
+      "bgColor": "#1b6b3a",
+      "contrastRatio": 3.57,
+      "fontSize": "10.6pt (14.08px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -42,7 +78,16 @@
     "snippet": "<strong>Sarah M., New York</strong>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#bfd6c8",
+      "bgColor": "#1b6b3a",
+      "contrastRatio": 4.25,
+      "fontSize": "10.6pt (14.08px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -51,7 +96,16 @@
     "snippet": "<span class=\"ticker-item\">\"Best two weeks of my life.\" — <strong>James K., London</strong></span>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#a8c7b4",
+      "bgColor": "#1b6b3a",
+      "contrastRatio": 3.57,
+      "fontSize": "10.6pt (14.08px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -60,7 +114,16 @@
     "snippet": "<strong>James K., London</strong>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#bfd6c8",
+      "bgColor": "#1b6b3a",
+      "contrastRatio": 4.25,
+      "fontSize": "10.6pt (14.08px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -69,7 +132,16 @@
     "snippet": "<div class=\"review-loc\">Stockholm, Sweden — Amazon Rainforest, 2024</div>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#94a3b8",
+      "bgColor": "#ffffff",
+      "contrastRatio": 2.56,
+      "fontSize": "9.8pt (13.12px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -78,7 +150,16 @@
     "snippet": "<div class=\"review-loc\">Lyon, France — Patagonia Expedition, 2025</div>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#94a3b8",
+      "bgColor": "#ffffff",
+      "contrastRatio": 2.56,
+      "fontSize": "9.8pt (13.12px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -87,7 +168,16 @@
     "snippet": "<p style=\"font-size:0.82rem;color:#888;margin-bottom:14px;\">After clicking the orange button, you will receive a confirmation at the email address above.</p>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#888888",
+      "bgColor": "#ffffff",
+      "contrastRatio": 3.54,
+      "fontSize": "9.8pt (13.12px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -96,7 +186,16 @@
     "snippet": "<p class=\"fine-print\">",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#aaaaaa",
+      "bgColor": "#ffffff",
+      "contrastRatio": 2.32,
+      "fontSize": "6.0pt (8px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -105,7 +204,16 @@
     "snippet": "<button type=\"submit\">Subscribe</button>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#ffffff",
+      "bgColor": "#d97706",
+      "contrastRatio": 3.18,
+      "fontSize": "10.0pt (13.3333px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -114,7 +222,16 @@
     "snippet": "<p class=\"footer-desc\">The world's leading boutique adventure travel company, inspiring bold journeys since 2009. IATA accredited. ATOL protected.</p>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#676b75",
+      "bgColor": "#111827",
+      "contrastRatio": 3.32,
+      "fontSize": "10.1pt (13.44px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -123,7 +240,16 @@
     "snippet": "<a href=\"#\">Africa</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -132,7 +258,16 @@
     "snippet": "<a href=\"#\">Asia &amp; Pacific</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -141,7 +276,16 @@
     "snippet": "<a href=\"#\">The Americas</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -150,7 +294,16 @@
     "snippet": "<a href=\"#\">Europe &amp; Arctic</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -159,7 +312,16 @@
     "snippet": "<a href=\"#\">Polar Expeditions</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -168,7 +330,16 @@
     "snippet": "<a href=\"#\">About Us</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -177,7 +348,16 @@
     "snippet": "<a href=\"#\">Our Guides</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -186,7 +366,16 @@
     "snippet": "<a href=\"#\">Sustainability</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -195,7 +384,16 @@
     "snippet": "<a href=\"#\">Press &amp; Media</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -204,7 +402,16 @@
     "snippet": "<a href=\"https://careers.example.com\" target=\"_blank\">Careers</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -213,7 +420,16 @@
     "snippet": "<a href=\"#\">FAQ</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -222,7 +438,16 @@
     "snippet": "<a href=\"#\">Contact Us</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -231,7 +456,16 @@
     "snippet": "<a href=\"#\">Travel Insurance</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -240,7 +474,16 @@
     "snippet": "<a href=\"https://visainfo.example.com\" target=\"_blank\">Visa Information</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -249,7 +492,16 @@
     "snippet": "<a href=\"#\" id=\"footer-link-acc\">Accessibility</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#6b7079",
+      "bgColor": "#111827",
+      "contrastRatio": 3.56,
+      "fontSize": "10.3pt (13.76px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -258,7 +510,16 @@
     "snippet": "<div>© 2025 Summit Adventures LLC. All rights reserved.</div>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#646973",
+      "bgColor": "#111827",
+      "contrastRatio": 3.21,
+      "fontSize": "9.6pt (12.8px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -267,7 +528,16 @@
     "snippet": "<a href=\"https://instagram.com\" target=\"_blank\" class=\"social-link\" title=\"Instagram\">IG</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#878a92",
+      "bgColor": "#242a38",
+      "contrastRatio": 4.15,
+      "fontSize": "9.0pt (12px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -276,7 +546,16 @@
     "snippet": "<a href=\"https://facebook.com\" target=\"_blank\" class=\"social-link\" title=\"Facebook\">FB</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#878a92",
+      "bgColor": "#242a38",
+      "contrastRatio": 4.15,
+      "fontSize": "9.0pt (12px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -285,7 +564,16 @@
     "snippet": "<a href=\"https://twitter.com\" target=\"_blank\" class=\"social-link\" title=\"Twitter/X\">TW</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#878a92",
+      "bgColor": "#242a38",
+      "contrastRatio": 4.15,
+      "fontSize": "9.0pt (12px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -294,7 +582,16 @@
     "snippet": "<a href=\"https://youtube.com\" target=\"_blank\" class=\"social-link\" title=\"YouTube\">YT</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#878a92",
+      "bgColor": "#242a38",
+      "contrastRatio": 4.15,
+      "fontSize": "9.0pt (12px)",
+      "fontWeight": "bold",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -303,7 +600,16 @@
     "snippet": "<p class=\"footer-tiny\">",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#414652",
+      "bgColor": "#111827",
+      "contrastRatio": 1.87,
+      "fontSize": "6.0pt (8px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -312,7 +618,16 @@
     "snippet": "<a href=\"#\" id=\"footer-link-acc\" style=\"color:inherit;\">Terms</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#414652",
+      "bgColor": "#111827",
+      "contrastRatio": 1.87,
+      "fontSize": "6.0pt (8px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "color-contrast",
@@ -321,7 +636,16 @@
     "snippet": "<a href=\"#\" style=\"color:inherit;\">Privacy</a>",
     "message": "Elements must meet minimum color contrast ratio thresholds",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "fgColor": "#414652",
+      "bgColor": "#111827",
+      "contrastRatio": 1.87,
+      "fontSize": "6.0pt (8px)",
+      "fontWeight": "normal",
+      "messageKey": null,
+      "expectedContrastRatio": "4.5:1"
+    }
   },
   {
     "rule": "document-title",
@@ -330,7 +654,8 @@
     "snippet": "<html lang=\"en\">",
     "message": "Documents must have <title> element to aid in navigation",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": null
   },
   {
     "rule": "heading-order",
@@ -339,7 +664,8 @@
     "snippet": "<h4 class=\"pkg-title\">Patagonia Expedition</h4>",
     "message": "Heading levels should only increase by one",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": null
   },
   {
     "rule": "image-alt",
@@ -348,7 +674,10 @@
     "snippet": "<img src=\"assets/himalaya.webp\" class=\"pkg-img img-himalaya\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -357,7 +686,10 @@
     "snippet": "<img src=\"assets/amazon.webp\" class=\"pkg-img img-amazon\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -366,7 +698,10 @@
     "snippet": "<img src=\"assets/patagonia.webp\" class=\"pkg-img img-patagonia\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -375,7 +710,10 @@
     "snippet": "<img src=\"assets/sahara.webp\" class=\"pkg-img img-sahara\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -384,7 +722,10 @@
     "snippet": "<img src=\"assets/gallery-main.webp\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -393,7 +734,10 @@
     "snippet": "<img src=\"assets/gallery-2.webp\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -402,7 +746,10 @@
     "snippet": "<img src=\"assets/gallery-3.webp\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -411,7 +758,10 @@
     "snippet": "<img src=\"assets/gallery-4.webp\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "image-alt",
@@ -420,7 +770,10 @@
     "snippet": "<img src=\"assets/gallery-5.webp\">",
     "message": "Images must have alternative text",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "label",
@@ -429,61 +782,82 @@
     "snippet": "<input type=\"checkbox\" style=\"margin-top:3px;\">",
     "message": "Form elements must have labels",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": "#home",
     "snippet": "<section class=\"hero\" id=\"home\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".stats-bar",
     "snippet": "<div class=\"stats-bar\" role=\"presentation\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".newsletter > h2",
     "snippet": "<h2>Stay in the Loop</h2>",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".newsletter > p:nth-child(2)",
     "snippet": "<p>Exclusive deals, new destinations, and trip reports delivered to your inbox each month.</p>",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": "input[placeholder=\"Your email address\"]",
     "snippet": "<input type=\"email\" id=\"email\" placeholder=\"Your email address\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".legal",
     "snippet": "<p class=\"legal\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "select-name | WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Select.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
@@ -492,7 +866,10 @@
     "snippet": "<select id=\"dest-select\">",
     "message": "Select element must have an accessible name",
     "severity": "critical",
-    "source": "both"
+    "source": "both",
+    "data": {
+      "messageKey": "noAttr"
+    }
   },
   {
     "rule": "tabindex",
@@ -501,7 +878,8 @@
     "snippet": "<input type=\"text\" id=\"lname\" tabindex=\"10\" placeholder=\"e.g. Johnson\">",
     "message": "Elements should not have tabindex greater than zero",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": null
   },
   {
     "rule": "tabindex",
@@ -510,7 +888,8 @@
     "snippet": "<input type=\"tel\" id=\"phone\" tabindex=\"5\" placeholder=\"+1 (555) 000-0000\">",
     "message": "Elements should not have tabindex greater than zero",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": null
   },
   {
     "rule": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl",
