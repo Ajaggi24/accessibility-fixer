@@ -6,7 +6,11 @@
     "snippet": "<div class=\"carousel-inner\" role=\"listbox\">",
     "message": "Certain ARIA roles must contain particular children",
     "severity": "critical",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "unallowed",
+      "values": "img, h2, [role=button]"
+    }
   },
   {
     "rule": "html-has-lang | WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
@@ -15,7 +19,10 @@
     "snippet": "<html>",
     "message": "<html> element must have a lang attribute",
     "severity": "serious",
-    "source": "both"
+    "source": "both",
+    "data": {
+      "messageKey": "noLang"
+    }
   },
   {
     "rule": "link-in-text-block",
@@ -24,7 +31,14 @@
     "snippet": "<a href=\"https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project\">WebGoat</a>",
     "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "fgContrast",
+      "contrastRatio": 1.51,
+      "requiredContrastRatio": 3,
+      "nodeColor": "#337ab7",
+      "parentColor": "#5a5a5a"
+    }
   },
   {
     "rule": "link-in-text-block",
@@ -33,7 +47,14 @@
     "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">github public site</a>",
     "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "fgContrast",
+      "contrastRatio": 1.51,
+      "requiredContrastRatio": 3,
+      "nodeColor": "#337ab7",
+      "parentColor": "#5a5a5a"
+    }
   },
   {
     "rule": "link-in-text-block",
@@ -42,7 +63,14 @@
     "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">public site</a>",
     "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "fgContrast",
+      "contrastRatio": 1.51,
+      "requiredContrastRatio": 3,
+      "nodeColor": "#337ab7",
+      "parentColor": "#5a5a5a"
+    }
   },
   {
     "rule": "link-in-text-block",
@@ -51,7 +79,14 @@
     "snippet": "<a href=\"https://github.com/jazahn/A11yGoat/issues\">issue tracker</a>",
     "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "fgContrast",
+      "contrastRatio": 1.51,
+      "requiredContrastRatio": 3,
+      "nodeColor": "#337ab7",
+      "parentColor": "#5a5a5a"
+    }
   },
   {
     "rule": "link-in-text-block",
@@ -60,7 +95,14 @@
     "snippet": "<a href=\"http://jekyllrb.com/\">Jekyll</a>",
     "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "messageKey": "fgContrast",
+      "contrastRatio": 1.51,
+      "requiredContrastRatio": 3,
+      "nodeColor": "#337ab7",
+      "parentColor": "#5a5a5a"
+    }
   },
   {
     "rule": "region",
@@ -69,7 +111,10 @@
     "snippet": "<img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"Perceivable\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
@@ -78,7 +123,10 @@
     "snippet": "<h2>Before You Start!</h2>",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
@@ -87,7 +135,10 @@
     "snippet": "<p>It's important to understand how other people make use of the web. If you don't have experience with a screen reader, try something simple, try the ChromeVox browser extension for Chrome.</p>",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "region",
@@ -96,7 +147,10 @@
     "snippet": "<div class=\"wrapper\">",
     "message": "All page content should be contained by landmarks",
     "severity": "moderate",
-    "source": "axe"
+    "source": "axe",
+    "data": {
+      "isIframe": false
+    }
   },
   {
     "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
