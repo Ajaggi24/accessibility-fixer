@@ -1,0 +1,99 @@
+---
+layout: default
+---
+{% if page.explanation %}
+<div class="row">
+    <div class="well">
+        {{ page.explanation | markdownify }}
+    </div>
+</div>
+{% endif %}
+
+<div class="example">
+
+    <header class="example-header">
+        <h1 class="example-title">{{ example.title }}</h1>
+        <p class="example-meta">{{ example.description }}</p>
+    </header>
+
+    <article class="example-content">
+        <div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#display" id="display-tab" role="tab" data-toggle="tab" aria-controls="display" aria-expanded="true">Display</a></li>
+                <li role="presentation" class=""><a href="#code-outer" role="tab" id="code-tab" data-toggle="tab" aria-controls="code-outer" aria-expanded="false">Code</a></li>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade active in" id="display" aria-labelledby="display-tab">{{ content }}</div>
+                <div role="tabpanel" class="tab-pane fade" id="code-outer" aria-labelledby="code-tab">
+                    <div id="code"></div>
+                    <div id="code-prez" role="presentation"></div>
+                </div>
+                <div
+            </div>
+        </div>
+
+    </article>
+
+
+    <div style="width: 100%">
+        <div class="" align="center">
+            <button class="btn btn-default" type="button" id="reset" data-toggle="tooltip" title="Resets your saved data and reloads the page.">Reset Page Save</button>
+            <button class="btn btn-default" type="button" id="switch_button" data-toggle="tooltip" title="Switches between inaccessible and accessible versions.">Switch to {% if page.accessible == true %}Inaccessible{% else %}Accessible{% endif %} Version</button>
+        </div>
+    </div>
+    <script>
+        // CodeMirror
+        // init saves
+        var saves = {};
+        if(localStorage.getItem('saves') != null) {
+            saves = JSON.parse(localStorage.getItem('saves'));
+        }
+        // load
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        filename = filename.substring(0, filename.indexOf('.'));
+        var initialValue = $('#display').html();
+        if(saves[filename] != undefined){
+            initialValue = saves[filename];
+        }
+        var code = document.getElementById('code');
+        var cm = CodeMirror(code, {
+            lineNumbers: true,
+            value: initialValue,
+            mode: "htmlmixed"
+        });
+        $('#display').html(cm.doc.getValue());
+
+        $('#display-tab').click(function(){
+            $('#display').html(cm.doc.getValue());
+        });
+        $('#code-tab').on('shown.bs.tab',
+        function() {
+            cm.refresh();
+        });
+        $('#code').on('keyup', function(){
+            // save
+            saves[filename] = cm.doc.getValue();
+            localStorage.setItem('saves', JSON.stringify(saves));
+        });
+        $('#reset').click(function(){
+            saves[filename] = null;
+            localStorage.setItem('saves', JSON.stringify(saves));
+            location.reload();
+        });
+        ////////////////
+
+        $('#switch_button').on('click', function(){
+            path = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+            filename = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+            if(filename.search('_fixed.html') == -1) {
+                new_filename = filename.replace('.html', '_fixed.html');
+            } else {
+                new_filename = filename.replace('_fixed.html', '.html');
+            }
+            window.location.href = path + new_filename;
+        });
+    </script>
+
+</div>
