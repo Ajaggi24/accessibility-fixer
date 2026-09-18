@@ -8,7 +8,7 @@
 // Output shape per violation:
 // {
 //   rule: string,          // e.g. "image-alt", "color-contrast"
-//   category: "alt-text" | "contrast" | "labels" | "heading-order" | "keyboard-focus" | "uncategorized",
+//   category: "alt-text" | "contrast" | "labels" | "landmark" | "heading-order" | "keyboard-focus" | "uncategorized",
 //   element: string,       // selector identifying the element
 //   snippet: string,       // HTML snippet for context, when available
 //   message: string,       // human-readable description of the problem
@@ -65,18 +65,26 @@ const CATEGORY_PATTERNS = [
     'link-in-text-block'
   ] },
 
- { category: 'labels', patterns: [
-  'label', 'aria-label', 'form-field-multiple-labels', 'select-name', 'button-name', 'link-name', '.h91', '.f68', '4_1_2.h91', '1_3_1.f68',
-  'aria-required-children', 'aria-required-parent', 'html-has-lang', 'lang',
-  // New: covers aria-input-field-name and the standalone pa11y H57.2 code
-  'aria-input-field-name', 'h57'
-] },
+  { category: 'labels', patterns: [
+    'label', 'aria-label', 'form-field-multiple-labels', 'select-name', 'button-name', 'link-name', '.h91', '.f68', '4_1_2.h91', '1_3_1.f68',
+    // ARIA name/role/value and document-language issues — both fall under
+    // WCAG 4.1.2 (Name, Role, Value) in spirit, closest fit to "labels".
+    'aria-required-children', 'aria-required-parent', 'html-has-lang', 'lang',
+    // Covers aria-input-field-name and pa11y's standalone H57.2 variant of
+    // the same html-lang failure (appears alone when dedupe doesn't merge
+    // it with axe's html-has-lang on the same run).
+    'aria-input-field-name', 'h57'
+  ] },
+
+  // UPDATED: previously "region"/"landmark" violations were folded into
+  // heading-order. The model kept reading the field name and "fixing"
+  // literal h1-h6 levels instead of wrapping content in landmarks — a
+  // real bug caught by checking its output. Split into an honest,
+  // separate category so the field name can't mislead the fixer prompt.
+  { category: 'landmark', patterns: ['region', 'landmark', 'bypass'] },
 
   { category: 'heading-order', patterns: [
-    'heading-order', 'empty-heading', 'page-has-heading', 'p-as-heading',
-    // Document/landmark structure issues — grouped here since both are
-    // about the page's navigable outline, not literal <h1>-<h6> order.
-    'region', 'landmark', 'bypass'
+    'heading-order', 'empty-heading', 'page-has-heading', 'p-as-heading'
   ] },
 
   { category: 'keyboard-focus', patterns: ['tabindex', 'focus-order', 'focusable', 'keyboard', 'accesskeys'] }

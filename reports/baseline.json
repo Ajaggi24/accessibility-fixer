@@ -1,766 +1,109 @@
 [
   {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".logo > span",
-    "snippet": "<span>Adventures</span>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
+    "rule": "aria-required-children",
+    "category": "labels",
+    "element": ".carousel-inner",
+    "snippet": "<div class=\"carousel-inner\" role=\"listbox\">",
+    "message": "Certain ARIA roles must contain particular children",
+    "severity": "critical",
     "source": "axe"
   },
   {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(2) > .pkg-body > .badge-sale.pkg-badge",
-    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(4) > .pkg-body > .badge-sale.pkg-badge",
-    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".ticker-item:nth-child(1)",
-    "snippet": "<span class=\"ticker-item\">\"Absolutely life-changing!\" — <strong>Sarah M., New York</strong></span>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".ticker-item:nth-child(1) > strong",
-    "snippet": "<strong>Sarah M., New York</strong>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".ticker-item:nth-child(2)",
-    "snippet": "<span class=\"ticker-item\">\"Best two weeks of my life.\" — <strong>James K., London</strong></span>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".ticker-item:nth-child(2) > strong",
-    "snippet": "<strong>James K., London</strong>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".review-card:nth-child(1) > .review-loc",
-    "snippet": "<div class=\"review-loc\">Stockholm, Sweden — Amazon Rainforest, 2024</div>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".review-card:nth-child(2) > .review-loc",
-    "snippet": "<div class=\"review-loc\">Lyon, France — Patagonia Expedition, 2025</div>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "p:nth-child(10)",
-    "snippet": "<p style=\"font-size:0.82rem;color:#888;margin-bottom:14px;\">After clicking the orange button, you will receive a confirmation at the email address above.</p>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".fine-print",
-    "snippet": "<p class=\"fine-print\">",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".nl-form > button[type=\"submit\"]",
-    "snippet": "<button type=\"submit\">Subscribe</button>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-desc",
-    "snippet": "<p class=\"footer-desc\">The world's leading boutique adventure travel company, inspiring bold journeys since 2009. IATA accredited. ATOL protected.</p>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Africa</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Asia &amp; Pacific</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">The Americas</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Europe &amp; Arctic</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Polar Expeditions</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">About Us</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Our Guides</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Sustainability</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Press &amp; Media</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"careers.example.com\"]",
-    "snippet": "<a href=\"https://careers.example.com\" target=\"_blank\">Careers</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">FAQ</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Contact Us</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\">Travel Insurance</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"visainfo.example.com\"]",
-    "snippet": "<a href=\"https://visainfo.example.com\" target=\"_blank\">Visa Information</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
-    "snippet": "<a href=\"#\" id=\"footer-link-acc\">Accessibility</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-bottom > div:nth-child(1)",
-    "snippet": "<div>© 2025 Summit Adventures LLC. All rights reserved.</div>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"instagram.com\"]",
-    "snippet": "<a href=\"https://instagram.com\" target=\"_blank\" class=\"social-link\" title=\"Instagram\">IG</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"facebook.com\"]",
-    "snippet": "<a href=\"https://facebook.com\" target=\"_blank\" class=\"social-link\" title=\"Facebook\">FB</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"twitter.com\"]",
-    "snippet": "<a href=\"https://twitter.com\" target=\"_blank\" class=\"social-link\" title=\"Twitter/X\">TW</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": "a[href$=\"youtube.com\"]",
-    "snippet": "<a href=\"https://youtube.com\" target=\"_blank\" class=\"social-link\" title=\"YouTube\">YT</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-tiny",
-    "snippet": "<p class=\"footer-tiny\">",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-tiny > a[href=\"#\"]:nth-child(1)",
-    "snippet": "<a href=\"#\" id=\"footer-link-acc\" style=\"color:inherit;\">Terms</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "color-contrast",
-    "category": "contrast",
-    "element": ".footer-tiny > a[href=\"#\"]:nth-child(2)",
-    "snippet": "<a href=\"#\" style=\"color:inherit;\">Privacy</a>",
-    "message": "Elements must meet minimum color contrast ratio thresholds",
-    "severity": "serious",
-    "source": "axe"
-  },
-  {
-    "rule": "document-title",
-    "category": "uncategorized",
+    "rule": "html-has-lang | WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
+    "category": "labels",
     "element": "html",
-    "snippet": "<html lang=\"en\">",
-    "message": "Documents must have <title> element to aid in navigation",
+    "snippet": "<html>",
+    "message": "<html> element must have a lang attribute",
+    "severity": "serious",
+    "source": "both"
+  },
+  {
+    "rule": "link-in-text-block",
+    "category": "contrast",
+    "element": "p:nth-child(8) > a",
+    "snippet": "<a href=\"https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project\">WebGoat</a>",
+    "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
     "source": "axe"
   },
   {
-    "rule": "heading-order",
-    "category": "heading-order",
-    "element": "h4",
-    "snippet": "<h4 class=\"pkg-title\">Patagonia Expedition</h4>",
-    "message": "Heading levels should only increase by one",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": ".img-himalaya",
-    "snippet": "<img src=\"assets/himalaya.webp\" class=\"pkg-img img-himalaya\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": ".img-amazon",
-    "snippet": "<img src=\"assets/amazon.webp\" class=\"pkg-img img-amazon\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": ".img-patagonia",
-    "snippet": "<img src=\"assets/patagonia.webp\" class=\"pkg-img img-patagonia\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": ".img-sahara",
-    "snippet": "<img src=\"assets/sahara.webp\" class=\"pkg-img img-sahara\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": "img[src$=\"gallery-main.webp\"]",
-    "snippet": "<img src=\"assets/gallery-main.webp\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": "img[src$=\"gallery-2.webp\"]",
-    "snippet": "<img src=\"assets/gallery-2.webp\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": "img[src$=\"gallery-3.webp\"]",
-    "snippet": "<img src=\"assets/gallery-3.webp\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": "img[src$=\"gallery-4.webp\"]",
-    "snippet": "<img src=\"assets/gallery-4.webp\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "image-alt",
-    "category": "alt-text",
-    "element": "img[src$=\"gallery-5.webp\"]",
-    "snippet": "<img src=\"assets/gallery-5.webp\">",
-    "message": "Images must have alternative text",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "label",
-    "category": "labels",
-    "element": "div:nth-child(8) > input[type=\"checkbox\"]",
-    "snippet": "<input type=\"checkbox\" style=\"margin-top:3px;\">",
-    "message": "Form elements must have labels",
-    "severity": "critical",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": "#home",
-    "snippet": "<section class=\"hero\" id=\"home\">",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": ".stats-bar",
-    "snippet": "<div class=\"stats-bar\" role=\"presentation\">",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": ".newsletter > h2",
-    "snippet": "<h2>Stay in the Loop</h2>",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": ".newsletter > p:nth-child(2)",
-    "snippet": "<p>Exclusive deals, new destinations, and trip reports delivered to your inbox each month.</p>",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": "input[placeholder=\"Your email address\"]",
-    "snippet": "<input type=\"email\" id=\"email\" placeholder=\"Your email address\">",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "region",
-    "category": "uncategorized",
-    "element": ".legal",
-    "snippet": "<p class=\"legal\">",
-    "message": "All page content should be contained by landmarks",
-    "severity": "moderate",
-    "source": "axe"
-  },
-  {
-    "rule": "select-name | WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Select.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-    "category": "labels",
-    "element": "#dest-select",
-    "snippet": "<select id=\"dest-select\">",
-    "message": "Select element must have an accessible name",
-    "severity": "critical",
-    "source": "both"
-  },
-  {
-    "rule": "tabindex",
-    "category": "keyboard-focus",
-    "element": "#lname",
-    "snippet": "<input type=\"text\" id=\"lname\" tabindex=\"10\" placeholder=\"e.g. Johnson\">",
-    "message": "Elements should not have tabindex greater than zero",
+    "rule": "link-in-text-block",
+    "category": "contrast",
+    "element": "p:nth-child(10) > a",
+    "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">github public site</a>",
+    "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
     "source": "axe"
   },
   {
-    "rule": "tabindex",
-    "category": "keyboard-focus",
-    "element": "#phone",
-    "snippet": "<input type=\"tel\" id=\"phone\" tabindex=\"5\" placeholder=\"+1 (555) 000-0000\">",
-    "message": "Elements should not have tabindex greater than zero",
+    "rule": "link-in-text-block",
+    "category": "contrast",
+    "element": "li:nth-child(1) > p:nth-child(2) > a:nth-child(1)",
+    "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">public site</a>",
+    "message": "Links must be distinguishable without relying on color",
     "severity": "serious",
     "source": "axe"
   },
   {
-    "rule": "WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl",
-    "category": "uncategorized",
-    "element": "html > head",
-    "snippet": "<head>\n    <meta charset=\"UTF-8\">\n   ...</head>",
-    "message": "A title should be provided for the document, using a non-empty title element in the head section.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
+    "rule": "link-in-text-block",
     "category": "contrast",
-    "element": "html > body > header > a > span",
-    "snippet": "<span>Adventures</span>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 3:1, but text in this element has a contrast ratio of 2.05:1. Recommendation:  change background to #00501f.",
-    "severity": "error",
-    "source": "pa11y"
+    "element": "p:nth-child(2) > a:nth-child(2)",
+    "snippet": "<a href=\"https://github.com/jazahn/A11yGoat/issues\">issue tracker</a>",
+    "message": "Links must be distinguishable without relying on color",
+    "severity": "serious",
+    "source": "axe"
   },
   {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name",
+    "rule": "link-in-text-block",
+    "category": "contrast",
+    "element": "a[href$=\"jekyllrb.com/\"]",
+    "snippet": "<a href=\"http://jekyllrb.com/\">Jekyll</a>",
+    "message": "Links must be distinguishable without relying on color",
+    "severity": "serious",
+    "source": "axe"
+  },
+  {
+    "rule": "region",
+    "category": "landmark",
+    "element": ".active.item > img[alt=\"Perceivable\"]",
+    "snippet": "<img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"Perceivable\">",
+    "message": "All page content should be contained by landmarks",
+    "severity": "moderate",
+    "source": "axe"
+  },
+  {
+    "rule": "region",
+    "category": "landmark",
+    "element": ".active.item > .container > .carousel-caption > h2",
+    "snippet": "<h2>Before You Start!</h2>",
+    "message": "All page content should be contained by landmarks",
+    "severity": "moderate",
+    "source": "axe"
+  },
+  {
+    "rule": "region",
+    "category": "landmark",
+    "element": ".active.item > .container > .carousel-caption > p:nth-child(2)",
+    "snippet": "<p>It's important to understand how other people make use of the web. If you don't have experience with a screen reader, try something simple, try the ChromeVox browser extension for Chrome.</p>",
+    "message": "All page content should be contained by landmarks",
+    "severity": "moderate",
+    "source": "axe"
+  },
+  {
+    "rule": "region",
+    "category": "landmark",
+    "element": ".page-content > .wrapper",
+    "snippet": "<div class=\"wrapper\">",
+    "message": "All page content should be contained by landmarks",
+    "severity": "moderate",
+    "source": "axe"
+  },
+  {
+    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
     "category": "labels",
-    "element": "html > body > header > div > div > input",
-    "snippet": "<input type=\"search\" placeholder=\"Search destinations...\">",
-    "message": "This searchinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "html > body > header > div > div > button",
-    "snippet": "<button type=\"button\">🔍</button>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.19:1. Recommendation:  change background to #b46100.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#home > div > div:nth-child(4) > a:nth-child(1)",
-    "snippet": "<a href=\"#packages\" class=\"btn-primary\">Explore Packages</a>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.19:1. Recommendation:  change background to #b46100.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#packages > div:nth-child(5) > div:nth-child(1) > img",
-    "snippet": "<img src=\"assets/himalaya.webp\" class=\"pkg-img img-himalaya\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#packages > div:nth-child(5) > div:nth-child(2) > img",
-    "snippet": "<img src=\"assets/amazon.webp\" class=\"pkg-img img-amazon\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#packages > div:nth-child(5) > div:nth-child(2) > div > span",
-    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.95:1. Recommendation:  change text colour to #cf1919.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#packages > div:nth-child(5) > div:nth-child(3) > img",
-    "snippet": "<img src=\"assets/patagonia.webp\" class=\"pkg-img img-patagonia\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#packages > div:nth-child(5) > div:nth-child(4) > img",
-    "snippet": "<img src=\"assets/sahara.webp\" class=\"pkg-img img-sahara\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#packages > div:nth-child(5) > div:nth-child(4) > div > span",
-    "snippet": "<span class=\"pkg-badge badge-sale\">On Sale</span>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.95:1. Recommendation:  change text colour to #cf1919.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(4)",
-    "snippet": "<div class=\"review-loc\">Stockholm, Sweden — Amazon Rain...</div>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.56:1. Recommendation:  change text colour to #68778c.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(4)",
-    "snippet": "<div class=\"review-loc\">Lyon, France — Patagonia Expedi...</div>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.56:1. Recommendation:  change text colour to #68778c.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-    "category": "labels",
-    "element": "#fname",
-    "snippet": "<input type=\"text\" id=\"fname\" placeholder=\"e.g. Sarah\" autocomplete=\"off\">",
-    "message": "This textinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.",
-    "severity": "error",
-    "source": "both"
-  },
-  {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
-    "category": "labels",
-    "element": "#contact > form > div:nth-child(8) > input",
-    "snippet": "<input type=\"checkbox\" style=\"margin-top:3px;\">",
-    "message": "This checkboxinput element does not have a name available to an accessibility API. Valid names are: label element, title undefined, aria-label undefined, aria-labelledby undefined.",
-    "severity": "error",
-    "source": "both"
-  },
-  {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-    "category": "uncategorized",
-    "element": "#email",
-    "snippet": "<input type=\"checkbox\" id=\"email\">",
-    "message": "Duplicate id attribute value \"email\" found on the web page.",
-    "severity": "error",
-    "source": "both"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#contact > form > p:nth-child(10)",
-    "snippet": "<p style=\"font-size:0.82rem;color:#888;margin-bottom:14px;\">After clicking the orange butto...</p>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.54:1. Recommendation:  change text colour to #767676.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#contact > form > p:nth-child(12)",
-    "snippet": "<p class=\"fine-print\">\n                By submitting ...</p>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.32:1. Recommendation:  change text colour to #767676.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#gallery > div:nth-child(3) > div:nth-child(1) > img",
-    "snippet": "<img src=\"assets/gallery-main.webp\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#gallery > div:nth-child(3) > div:nth-child(2) > img",
-    "snippet": "<img src=\"assets/gallery-2.webp\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#gallery > div:nth-child(3) > div:nth-child(3) > img",
-    "snippet": "<img src=\"assets/gallery-3.webp\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#gallery > div:nth-child(3) > div:nth-child(4) > img",
-    "snippet": "<img src=\"assets/gallery-4.webp\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
-    "category": "alt-text",
-    "element": "#gallery > div:nth-child(3) > div:nth-child(5) > img",
-    "snippet": "<img src=\"assets/gallery-5.webp\">",
-    "message": "Img element missing an alt attribute. Use the alt attribute to specify a short text alternative.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-    "category": "uncategorized",
-    "element": "#departure-info",
-    "snippet": "<p id=\"departure-info\" style=\"font-size:0.85rem;color:var(--slate);margin-top:12px;\">\n            <!-- BUG 46: WCAG ...</p>",
-    "message": "Duplicate id attribute value \"departure-info\" found on the web page.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "html > body > section:nth-child(5) > form > button",
-    "snippet": "<button type=\"submit\">Subscribe</button>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.19:1. Recommendation:  change background to #b46100.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
-    "category": "uncategorized",
-    "element": "#footer-link-acc",
-    "snippet": "<a href=\"#\" id=\"footer-link-acc\" style=\"color:inherit;\">Terms</a>",
-    "message": "Duplicate id attribute value \"footer-link-acc\" found on the web page.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)",
-    "snippet": "<div class=\"review-stars\" aria-hidden=\"true\">★★★★★</div>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.19:1. Recommendation:  change text colour to #b46100.",
-    "severity": "error",
-    "source": "pa11y"
-  },
-  {
-    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
-    "category": "contrast",
-    "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)",
-    "snippet": "<div class=\"review-stars\" aria-hidden=\"true\">★★★★★</div>",
-    "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 3.19:1. Recommendation:  change text colour to #b46100.",
+    "element": "html > body > div > header > div > nav > a",
+    "snippet": "<a href=\"#\" class=\"menu-icon\">\n        <svg viewBox=\"0 0 18 1...</a>",
+    "message": "Anchor element found with a valid href attribute, but no link content has been supplied.",
     "severity": "error",
     "source": "pa11y"
   }

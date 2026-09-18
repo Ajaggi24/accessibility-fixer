@@ -1,67 +1,78 @@
 // fixer-structural.js
 // Owner: Role 3 — Fixer Agent (Structural)
 //
-// Handles the rule-based fixes: heading order, missing form labels,
-// ARIA roles, keyboard/tab order. These mostly have one correct answer,
-// so the LLM call here is lighter-weight than the content fixer's.
-//
-// Every fix MUST return this shape (agreed team-wide contract):
-// {
-//   rule, category, element,   // copied over from the violation
-//   fix: string,                // the proposed replacement value/content
-//   reasoning: string,          // why the agent chose this fix
-//   confidence: "high" | "medium" | "low"
-// }
+// Runs against A11yGoat. Matches fixer-content.js's architecture: sends
+// the real HTML source + filtered violations, the model edits the file
+// itself and returns changelog + full corrected HTML. No cheerio, no
+// apply-fixes.js — the model IS the apply step now.
 
-import Anthropic from '@anthropic-ai/sdk';
+import fs from 'fs/promises';
+import path from 'path';
+import OpenAI from 'openai';
 import 'dotenv/config';
+import { STRUCTURAL_SYSTEM_PROMPT, buildUserMessage } from './prompts/prompts-structural.js';
+import { parseChangelogResponse } from './parse-changelog.js';
 
-const client = new Anthropic(); // reads ANTHROPIC_API_KEY from env
+const client = new OpenAI({
+  baseURL: 'https://openrouter.ai/api/v1',
+  apiKey: process.env.OPENROUTER_API_KEY,
+});
 
-const STRUCTURAL_CATEGORIES = ['labels', 'heading-order', 'keyboard-focus'];
+const A11YGOAT_DIR = 'target-site/A11yGoat';
+const A11YGOAT_BASELINE = 'reports/baseline.json'; // or reports/baseline-a11ygoat.json
+const OUTPUT_HTML_PATH = 'target-site-fixed/A11yGoat/index.html';
 
-export async function fixStructural(violations) {
-  const structuralViolations = violations.filter(v =>
-    STRUCTURAL_CATEGORIES.includes(v.category)
-  );
+const STRUCTURAL_CATEGORIES = ['labels', 'landmark'];
 
-  const fixes = [];
-  for (const violation of structuralViolations) {
-    // TODO: Role 3 — tune this prompt per category. Heading order, labels,
-    // and keyboard focus likely need different instructions.
-    const response = await client.messages.create({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 500,
-      messages: [
-        {
-          role: 'user',
-          content: `Accessibility violation: ${violation.rule} (${violation.category})
-Element: ${violation.element}
+export async function fixStructural(allViolations) {
+  const myViolations = allViolations.filter(v => STRUCTURAL_CATEGORIES.includes(v.category));
 
-Return ONLY valid JSON, no other text:
-{"fix": "the corrected value or markup", "reasoning": "brief reason", "confidence": "high" | "medium" | "low"}`
-        }
-      ]
-    });
-
-    let parsed;
-    try {
-      parsed = JSON.parse(response.content[0].text);
-    } catch (err) {
-      console.error(`[fixer-structural.js] Failed to parse LLM response for ${violation.rule}:`, err);
-      continue;
-    }
-
-    fixes.push({ ...violation, ...parsed });
+  if (myViolations.length === 0) {
+    console.log('[fixer-structural.js] No labels/landmark violations. Nothing to do.');
+    return { fixes: [], correctedHtml: null };
   }
 
-  return fixes;
+  console.log(`[fixer-structural.js] Sending ${myViolations.length} violations to the model.`);
+
+  const htmlSource = await fs.readFile(path.join(A11YGOAT_DIR, 'index.html'), 'utf-8');
+  const userText = buildUserMessage(myViolations, htmlSource);
+
+  const response = await client.chat.completions.create({
+    model: 'anthropic/claude-sonnet-4.5',
+    max_tokens: 8000,
+    messages: [
+      { role: 'system', content: STRUCTURAL_SYSTEM_PROMPT },
+      { role: 'user', content: userText }
+    ]
+  });
+
+  const raw = response.choices[0].message.content;
+  const { changelogText, correctedHtml, fixes } = parseChangelogResponse(raw);
+
+  console.log(`[fixer-structural.js] Parsed ${fixes.length} changelog entries (${fixes.filter(f => f.skipped).length} skipped)`);
+
+  if (fixes.length < myViolations.length) {
+    console.warn(`[fixer-structural.js] WARNING: sent ${myViolations.length} violations but only got ${fixes.length} changelog entries back. Some violations may have been silently dropped by the model.`);
+    await fs.mkdir('reports', { recursive: true });
+    await fs.writeFile('reports/raw-structural-response.txt', raw);
+    console.warn('[fixer-structural.js] Full raw model response saved to reports/raw-structural-response.txt for inspection.');
+  }
+
+  return { fixes, correctedHtml, changelogText };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const fs = await import('fs/promises');
-  const baseline = JSON.parse(await fs.readFile('reports/baseline.json', 'utf-8'));
-  const fixes = await fixStructural(baseline);
-  console.log(`[fixer-structural.js] Produced ${fixes.length} fixes`);
-  console.log(JSON.stringify(fixes, null, 2));
+  const baseline = JSON.parse(await fs.readFile(A11YGOAT_BASELINE, 'utf-8'));
+  const { fixes, correctedHtml, changelogText } = await fixStructural(baseline);
+
+  await fs.mkdir('reports', { recursive: true });
+  await fs.writeFile('reports/fixes-structural.json', JSON.stringify(fixes, null, 2));
+  await fs.writeFile('reports/changelog-structural.md', changelogText || '(no fixes)');
+  console.log('[fixer-structural.js] Wrote reports/fixes-structural.json and reports/changelog-structural.md');
+
+  if (correctedHtml) {
+    await fs.mkdir(path.dirname(OUTPUT_HTML_PATH), { recursive: true });
+    await fs.writeFile(OUTPUT_HTML_PATH, correctedHtml);
+    console.log(`[fixer-structural.js] Wrote corrected HTML to ${OUTPUT_HTML_PATH}`);
+  }
 }
