@@ -1,0 +1,18 @@
+[
+  {
+    "rule": "tabindex",
+    "category": "keyboard-focus",
+    "element": "#lname",
+    "fix": "tabindex=\"0\"",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "confidence": "low"
+  },
+  {
+    "rule": "tabindex",
+    "category": "keyboard-focus",
+    "element": "#phone",
+    "fix": "tabindex=\"0\"",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "confidence": "low"
+  }
+]

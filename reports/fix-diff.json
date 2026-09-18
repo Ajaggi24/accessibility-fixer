@@ -1,0 +1,742 @@
+[
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".logo > span",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(2) > .pkg-body > .badge-sale.pkg-badge",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".pkg-card[onclick=\"void(0)\"]:nth-child(4) > .pkg-body > .badge-sale.pkg-badge",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".ticker-item:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".ticker-item:nth-child(1) > strong",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".ticker-item:nth-child(2)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".ticker-item:nth-child(2) > strong",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".review-card:nth-child(1) > .review-loc",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".review-card:nth-child(2) > .review-loc",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "p:nth-child(10)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".fine-print",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".nl-form > button[type=\"submit\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-desc",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(2) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(3) > .footer-links > li:nth-child(4) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"careers.example.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(1) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(2) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(3) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"visainfo.example.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-col:nth-child(4) > .footer-links > li:nth-child(5) > a[href=\"#\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-bottom > div:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"instagram.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"facebook.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"twitter.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": "a[href$=\"youtube.com\"]",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-tiny",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-tiny > a[href=\"#\"]:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "color-contrast",
+    "category": "contrast",
+    "element": ".footer-tiny > a[href=\"#\"]:nth-child(2)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "heading-order",
+    "category": "heading-order",
+    "element": "h4",
+    "before": null,
+    "proposedFix": "Adjust heading level to preserve document order",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": ".img-himalaya",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": ".img-amazon",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": ".img-patagonia",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": ".img-sahara",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": "img[src$=\"gallery-main.webp\"]",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": "img[src$=\"gallery-2.webp\"]",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": "img[src$=\"gallery-3.webp\"]",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": "img[src$=\"gallery-4.webp\"]",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "image-alt",
+    "category": "alt-text",
+    "element": "img[src$=\"gallery-5.webp\"]",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "label",
+    "category": "labels",
+    "element": "div:nth-child(8) > input[type=\"checkbox\"]",
+    "before": null,
+    "proposedFix": "aria-label=\"Descriptive label\"",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "select-name | WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Select.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+    "category": "labels",
+    "element": "#dest-select",
+    "before": null,
+    "proposedFix": "aria-label=\"Descriptive label\"",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "tabindex",
+    "category": "keyboard-focus",
+    "element": "#lname",
+    "before": null,
+    "proposedFix": "tabindex=\"0\"",
+    "confidence": "low",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "held-for-review"
+  },
+  {
+    "rule": "tabindex",
+    "category": "keyboard-focus",
+    "element": "#phone",
+    "before": null,
+    "proposedFix": "tabindex=\"0\"",
+    "confidence": "low",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "held-for-review"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail",
+    "category": "contrast",
+    "element": "html > body > header > a > span",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputSearch.Name",
+    "category": "labels",
+    "element": "html > body > header > div > div > input",
+    "before": null,
+    "proposedFix": "aria-label=\"Descriptive label\"",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "html > body > header > div > div > button",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#home > div > div:nth-child(4) > a:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#packages > div:nth-child(5) > div:nth-child(1) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#packages > div:nth-child(5) > div:nth-child(2) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#packages > div:nth-child(5) > div:nth-child(2) > div > span",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#packages > div:nth-child(5) > div:nth-child(3) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#packages > div:nth-child(5) > div:nth-child(4) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#packages > div:nth-child(5) > div:nth-child(4) > div > span",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(4)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(4)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputText.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+    "category": "labels",
+    "element": "#fname",
+    "before": null,
+    "proposedFix": "aria-label=\"Descriptive label\"",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputCheckbox.Name | WCAG2AA.Principle1.Guideline1_3.1_3_1.F68",
+    "category": "labels",
+    "element": "#contact > form > div:nth-child(8) > input",
+    "before": null,
+    "proposedFix": "aria-label=\"Descriptive label\"",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#contact > form > p:nth-child(10)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#contact > form > p:nth-child(12)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#gallery > div:nth-child(3) > div:nth-child(1) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#gallery > div:nth-child(3) > div:nth-child(2) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#gallery > div:nth-child(3) > div:nth-child(3) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#gallery > div:nth-child(3) > div:nth-child(4) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37",
+    "category": "alt-text",
+    "element": "#gallery > div:nth-child(3) > div:nth-child(5) > img",
+    "before": null,
+    "proposedFix": "Descriptive alt text for this image",
+    "confidence": "high",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "html > body > section:nth-child(5) > form > button",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#reviews > div:nth-child(3) > div:nth-child(1) > div:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  },
+  {
+    "rule": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+    "category": "contrast",
+    "element": "#reviews > div:nth-child(3) > div:nth-child(2) > div:nth-child(1)",
+    "before": null,
+    "proposedFix": "#595959",
+    "confidence": "medium",
+    "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+    "gate": "auto-applied"
+  }
+]

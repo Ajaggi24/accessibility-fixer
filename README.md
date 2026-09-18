@@ -14,20 +14,80 @@ cp .env.example .env        # then paste your real key into .env
 
 `.env` is gitignored — never commit it.
 
-## Run the full pipeline
+## Run the full pipeline (Role 5 — the orchestrator)
+
+One command runs everything: **receive site → scan (find + categorize) → fix →
+confidence gate → apply → serve + verify → report.**
 
 ```bash
-node run-pipeline.js
+node run-pipeline.js                                 # default target: A11yGoat
+node run-pipeline.js --url http://localhost:8001/    # any target URL
+node run-pipeline.js --mock                          # force placeholder fixes
+node run-pipeline.js --real                          # force real LLM fixers
 ```
+
+### What each flag / env var does
+
+| Input | Effect |
+|---|---|
+| `--url <URL>` / `TARGET_SITE_URL` | The site to scan. Default `http://localhost:8000/A11yGoat/`. |
+| `FIXED_SITE_URL` | Override the verify URL (needed when the target lives in a subpath of the fixed copy — see note below). |
+| `--mock` | Use `fixer-mock.js` placeholder fixes (honors the shared contract). |
+| `--real` | Use the real LLM fixers (`fixer-structural.js` + `fixer-content.js`). |
+| _(auto)_ | With no flag, the pipeline uses **real** fixers if `ANTHROPIC_API_KEY` looks valid (`sk-…`), otherwise falls back to **mock** so it always runs end-to-end. |
+
+### Hands-free verify server
+
+The verify step needs the fixed copy served over http. The orchestrator
+**auto-starts** `python3 -m http.server 8002` in `target-site-fixed/`, waits for
+it to respond, re-scans, then shuts it down. No manual server needed.
+
+### Confidence gate (non-blocking)
+
+- `high` / `medium` fixes → auto-applied.
+- `low` fixes → written to `reports/held-for-review.json` for Role 6.
+- The run never pauses or prompts — it reports how many were held and keeps going.
+
+### Reports produced (in `reports/`)
+
+| File | Contents |
+|---|---|
+| `baseline.json` | Every violation found, categorized (Role 2 output). |
+| `fixes.json` | Every proposed fix (shared contract shape). |
+| `held-for-review.json` | Low-confidence fixes awaiting Role 6 sign-off. |
+| `after.json` | Violations remaining after the fixed copy is re-scanned. |
+| `fix-diff.json` | Per-fix before/after: element, proposed value, confidence, gate decision. |
+| `summary.json` | Before/after counts by category, totals, run metadata, warnings. |
+| `pr-description.md` | Human-readable PR text with a before/after table. |
+
+### View it
+
+```bash
+python3 -m http.server 8080     # from the project root
+# open http://localhost:8080/dashboard.html
+```
+
+### Serving note (important for meaningful before/after)
+
+The fixed copy must be served the **same way** the target is, or the re-scan
+isn't comparable:
+
+- **Static sites (bada11y):** copy is served as-is on :8002 — apples-to-apples.
+  For bada11y the copy lives at `target-site-fixed/bada11y/`, so run with
+  `FIXED_SITE_URL=http://localhost:8002/bada11y/`.
+- **Jekyll sites (A11yGoat):** the baseline is Jekyll-rendered; the raw source
+  copy is not. Building the fixed copy with Jekyll is a Role 1 serving concern.
+  If `after > before`, `summary.json.warnings` flags it as a serving mismatch
+  (not a regression) rather than reporting negative "fixed" counts.
 
 ## Run one stage at a time (useful while building/debugging)
 
 ```bash
 npm run scan       # writes reports/baseline.json
 npm run fix        # writes reports/fixes.json
-npm run apply       # writes target-site-fixed/
-npm run verify      # writes reports/after.json
-npm run report      # writes reports/summary.json + reports/pr-description.md
+npm run apply      # writes target-site-fixed/
+npm run verify     # writes reports/after.json (needs :8002 serving the fixed copy)
+npm run report     # writes reports/summary.json + reports/pr-description.md
 ```
 
 ## File ownership (matches the team role breakdown)
@@ -39,7 +99,7 @@ npm run report      # writes reports/summary.json + reports/pr-description.md
 | `scan.js`, `verify.js` | Role 2 — Scanner & Triage |
 | `fixer-structural.js`, part of `apply-fixes.js` | Role 3 — Fixer Agent (Structural) |
 | `fixer-content.js` | Role 4 — Fixer Agent (Content/Judgment) |
-| `run-pipeline.js`, `report.js` | Role 5 — Pipeline Orchestration |
+| `run-pipeline.js`, `report.js`, `fixer-mock.js` | Role 5 — Pipeline Orchestration |
 | `dashboard.html` | Role 6 — Human QA & Demo |
 
 ## Shared fix JSON shape — lock this before anyone starts coding fixers
