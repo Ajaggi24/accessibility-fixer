@@ -21,11 +21,19 @@
 //    so an unfinished/failing stage degrades gracefully instead of killing
 //    the whole demo. When no valid ANTHROPIC_API_KEY is present we fall back
 //    to fixer-mock.js so the pipeline still runs end-to-end.
+//
+//  --real is architecturally different from every other mode: it's not one
+//  site/one fixer, it's TWO sites (A11yGoat for structural fixes, bada11y
+//  for content fixes), and each fixer self-applies by writing its own
+//  corrected HTML directly — no shared baseline, no applyFixes() step, no
+//  generic verify loop. It runs via its own dedicated runRealPipeline()
+//  function below, standalone, before the generic single-site flow.
 
 import fs from 'fs/promises';
 import { spawn } from 'child_process';
 import { runScan, writeBaseline } from './scan.js';
-import { runFixer } from './fixer.js';
+import { fixStructural } from './fixer-structural.js';
+import { fixContent } from './fixer-content.js';
 import { runMockFixer } from './fixer-mock.js';
 import { runOpenRouterFixer, runHybridFixer } from './fixer-openrouter.js';
 import { fixWithRules } from './fixer-rules.js';
@@ -64,9 +72,13 @@ const TARGET_URL =
 // It MUST line up with the target URL or verify compares two different things:
 //   python3 -m http.server 8001   (run inside target-site/bada11y)
 //     -> TARGET_URL http://localhost:8001/   + SITE_DIR target-site/bada11y
-//   python3 -m http.server 8000   (run inside target-site)
-//     -> TARGET_URL http://localhost:8000/A11yGoat/ + SITE_DIR target-site
-const SITE_DIR = args.siteDir || process.env.SITE_DIR || 'target-site/bada11y';
+//   jekyll serve --port 8000      (run inside target-site/A11yGoat)
+//     -> TARGET_URL http://localhost:8000/A11yGoat/ + SITE_DIR target-site/A11yGoat
+//
+// FIXED: this previously defaulted to target-site/bada11y while TARGET_URL
+// defaulted to A11yGoat — a real mismatch that broke verify on every
+// no-flags run. Defaults now point at the same site.
+const SITE_DIR = args.siteDir || process.env.SITE_DIR || 'target-site/A11yGoat';
 
 const FIXED_DIR = 'target-site-fixed';
 const FIXED_PORT = 8002;
@@ -92,7 +104,8 @@ const FIXED_URL = process.env.FIXED_SITE_URL || deriveFixedUrl(TARGET_URL, FIXED
 //   --rules      -> fixer-rules.js only: deterministic WCAG fixes, no API key.
 //   --openrouter -> full AI: one OpenRouter call per violation (slow on big
 //                   sites, subject to rate limits).
-//   --real       -> teammates' Anthropic-SDK fixers (fixer-structural/content)
+//   --real       -> Role 3/4's real fixers (fixer-structural/content),
+//                   two-site flow, handled entirely by runRealPipeline().
 //   --mock       -> placeholder fixes (fixer-mock), fixes nothing on purpose
 function pickFixerMode() {
   if (args.rules) return 'rules';
@@ -107,7 +120,7 @@ const FIXER_MODE = pickFixerMode();
 const FIXER_LABEL = {
   hybrid: 'HYBRID (deterministic rules + OpenRouter alt-text quality)',
   rules: 'RULES (deterministic WCAG fixes, no API key needed)',
-  real: 'REAL (teammates\u2019 Anthropic fixers)',
+  real: 'REAL (Role 3/4\u2019s fixer-structural.js + fixer-content.js, two-site)',
   openrouter: 'OPENROUTER (real AI, one call per violation)',
   mock: 'MOCK (placeholder fixes \u2014 fixes nothing, for testing the plumbing)'
 };
@@ -118,7 +131,6 @@ async function runSelectedFixer(baseline) {
     if (!hasOpenRouterKey()) return fixWithRules(baseline, { siteDir: SITE_DIR });
     return runHybridFixer(baseline, { siteDir: SITE_DIR });
   }
-  if (FIXER_MODE === 'real') return runFixer(baseline);
   if (FIXER_MODE === 'openrouter') {
     if (!hasOpenRouterKey()) throw new Error('OPENROUTER_API_KEY is not set');
     return runOpenRouterFixer(baseline);
@@ -127,7 +139,79 @@ async function runSelectedFixer(baseline) {
 }
 
 // ---------------------------------------------------------------------------
-// Verify-server helpers (auto-serve :8002, wait, tear down)
+// REAL mode — two sites, two self-applying fixers. Standalone flow, does not
+// share the generic single-site scan/fix/apply/verify loop below.
+// ---------------------------------------------------------------------------
+
+// TODO: confirm these against however bada11y is actually being served —
+// adjust the URL/port here if your teammate serves it differently.
+const A11YGOAT_URL = 'http://localhost:8000/A11yGoat/';
+const BADA11Y_URL = 'http://localhost:8001/';
+
+async function runRealPipeline() {
+  console.log('Accessibility Fixer — REAL pipeline (two-site)');
+  console.log(`  A11yGoat (${A11YGOAT_URL}) -> fixer-structural.js (labels + landmark)`);
+  console.log(`  bada11y  (${BADA11Y_URL}) -> fixer-content.js (alt-text + contrast)`);
+  console.log('');
+
+  await fs.mkdir('reports', { recursive: true });
+
+  console.log('1/4 Scanning A11yGoat...');
+  const a11ygoatBaseline = await runScan(A11YGOAT_URL);
+  console.log(`   -> ${a11ygoatBaseline.length} violations`);
+
+  console.log('2/4 Running fixer-structural.js...');
+  let structuralResult = { fixes: [], correctedHtml: null };
+  try {
+    structuralResult = await fixStructural(a11ygoatBaseline);
+    console.log(`   -> ${structuralResult.fixes.length} fixes, written to target-site-fixed/A11yGoat/index.html`);
+  } catch (err) {
+    console.warn(`   !! fixer-structural.js failed: ${err.message}`);
+  }
+
+  console.log('3/4 Scanning bada11y...');
+  let bada11yBaseline = [];
+  try {
+    bada11yBaseline = await runScan(BADA11Y_URL);
+    console.log(`   -> ${bada11yBaseline.length} violations`);
+  } catch (err) {
+    console.warn(`   !! could not scan bada11y (${err.message}) — is it being served on ${BADA11Y_URL}?`);
+  }
+
+  console.log('4/4 Running fixer-content.js...');
+  let contentResult = { fixes: [], correctedHtml: null };
+  try {
+    contentResult = await fixContent(bada11yBaseline);
+    console.log(`   -> ${contentResult.fixes.length} fixes, written to target-site-fixed/bada11y/index.html`);
+  } catch (err) {
+    console.warn(`   !! fixer-content.js failed: ${err.message}`);
+  }
+
+  const allFixes = [
+    ...structuralResult.fixes.map(f => ({ ...f, site: 'A11yGoat' })),
+    ...contentResult.fixes.map(f => ({ ...f, site: 'bada11y' }))
+  ];
+  const allBaseline = [...a11ygoatBaseline, ...bada11yBaseline];
+
+  await fs.writeFile('reports/fixes.json', JSON.stringify(allFixes, null, 2));
+  await writeBaseline(allBaseline);
+
+  const heldForReview = allFixes.filter(f => f.confidence === 'low');
+  await fs.writeFile('reports/held-for-review.json', JSON.stringify(heldForReview, null, 2));
+
+  console.log('');
+  console.log(`Done. ${allFixes.length} total fixes across both sites (${heldForReview.length} low-confidence/skipped, flagged for review).`);
+  console.log('  target-site-fixed/A11yGoat/index.html');
+  console.log('  target-site-fixed/bada11y/index.html');
+  console.log('');
+  console.log('Note: REAL mode does not run the generic verify/re-scan step —');
+  console.log('to confirm fixes landed, re-scan each fixed site manually, e.g.:');
+  console.log('  python3 -m http.server 8002   # from inside target-site-fixed/A11yGoat/');
+}
+
+// ---------------------------------------------------------------------------
+// Verify-server helpers (auto-serve :8002, wait, tear down) — used by the
+// generic (non-real) single-site flow only.
 // ---------------------------------------------------------------------------
 async function waitForServer(url, { tries = 40, delayMs = 250 } = {}) {
   for (let i = 0; i < tries; i++) {
@@ -162,9 +246,13 @@ async function withFixedServer(fn) {
 }
 
 // ---------------------------------------------------------------------------
-// Pipeline
+// Pipeline (generic single-site flow — rules/hybrid/openrouter/mock only)
 // ---------------------------------------------------------------------------
 async function main() {
+  if (FIXER_MODE === 'real') {
+    return runRealPipeline();
+  }
+
   await fs.mkdir('reports', { recursive: true });
 
   console.log('Accessibility Fixer — full pipeline');
