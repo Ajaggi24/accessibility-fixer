@@ -4,3 +4,9 @@ target-site-fixed/
 reports/*.json
 !reports/.gitkeep
 .DS_Store
+
+# Jekyll-specific
+target-site/a11ygoat/_site/
+target-site/a11ygoat/.jekyll-cache/
+target-site/a11ygoat/.bundle/
+target-site/a11ygoat/vendor/
