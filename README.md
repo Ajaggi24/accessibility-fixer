@@ -20,10 +20,13 @@ One command runs everything: **receive site → scan (find + categorize) → fix
 confidence gate → apply → serve + verify → report.**
 
 ```bash
+node run-pipeline.js --url http://localhost:8001/    # bada11y (static) — cleanest demo
 node run-pipeline.js                                 # default target: A11yGoat
-node run-pipeline.js --url http://localhost:8001/    # any target URL
-node run-pipeline.js --mock                          # force placeholder fixes
-node run-pipeline.js --real                          # force real LLM fixers
+node run-pipeline.js --rules                         # deterministic fixes only, no API key
+node run-pipeline.js --hybrid                        # rules + OpenRouter alt-text quality
+node run-pipeline.js --openrouter                    # full AI: one call per violation (slow)
+node run-pipeline.js --mock                          # placeholder fixes (plumbing test)
+node run-pipeline.js --real                          # teammates' Anthropic fixers
 ```
 
 ### What each flag / env var does
@@ -31,10 +34,33 @@ node run-pipeline.js --real                          # force real LLM fixers
 | Input | Effect |
 |---|---|
 | `--url <URL>` / `TARGET_SITE_URL` | The site to scan. Default `http://localhost:8000/A11yGoat/`. |
-| `FIXED_SITE_URL` | Override the verify URL (needed when the target lives in a subpath of the fixed copy — see note below). |
-| `--mock` | Use `fixer-mock.js` placeholder fixes (honors the shared contract). |
-| `--real` | Use the real LLM fixers (`fixer-structural.js` + `fixer-content.js`). |
-| _(auto)_ | With no flag, the pipeline uses **real** fixers if `ANTHROPIC_API_KEY` looks valid (`sk-…`), otherwise falls back to **mock** so it always runs end-to-end. |
+| `--site-dir <DIR>` / `SITE_DIR` | Source folder the target is served from (needed to build real fixes from the DOM). Default `target-site/bada11y`. Use `target-site` for A11yGoat. |
+| `FIXED_SITE_URL` | Override the verify URL (fixed copy is served on `:8002`). |
+| `--rules` | Deterministic WCAG fixes (`fixer-rules.js`). Instant, free, no key. Guarantees a real before/after. |
+| `--hybrid` / `--ai` | Rules for everything **plus** OpenRouter to upgrade alt-text quality. |
+| `--openrouter` | Full AI: one OpenRouter call per violation (slow on big sites, rate-limited). |
+| `--real` | Teammates' Anthropic-SDK fixers (`fixer-structural.js` + `fixer-content.js`). |
+| `--mock` | `fixer-mock.js` placeholder fixes (fixes nothing — for testing the plumbing). |
+| _(auto)_ | With no flag: **hybrid** if `OPENROUTER_API_KEY` is set, otherwise **rules**. Always runs end-to-end. |
+
+Proven result (bada11y, `--rules`): **85 violations → 11 remaining, 74 fixed** (54 real HTML edits written). The 11 left are genuinely hard cases (mid-tone-background contrast, landmark regions, duplicate ids) — correctly held, not silently dropped.
+
+### Using OpenRouter for real AI fixes
+
+The team uses OpenRouter (no Anthropic key needed). Put these in `.env`:
+
+```env
+OPENROUTER_API_KEY=sk-or-...                 # your OpenRouter key (never committed)
+OPENROUTER_MODEL=anthropic/claude-sonnet-4.5 # any OpenRouter model id
+# OPENROUTER_REQUEST_DELAY_MS=1500           # spacing between calls (rate limits)
+```
+
+Then just run `node run-pipeline.js`. Notes:
+- New OpenRouter accounts are limited to ~20 requests/minute per model, so a
+  large site takes a few minutes. `openrouter.js` retries on 429 automatically
+  and paces requests; raise `OPENROUTER_REQUEST_DELAY_MS` if you still hit limits.
+- Any one element that fails is skipped (logged), never crashing the run.
+- Sanity-check connectivity any time: `node openrouter.js`.
 
 ### Hands-free verify server
 
@@ -99,7 +125,7 @@ npm run report     # writes reports/summary.json + reports/pr-description.md
 | `scan.js`, `verify.js` | Role 2 — Scanner & Triage |
 | `fixer-structural.js`, part of `apply-fixes.js` | Role 3 — Fixer Agent (Structural) |
 | `fixer-content.js` | Role 4 — Fixer Agent (Content/Judgment) |
-| `run-pipeline.js`, `report.js`, `fixer-mock.js` | Role 5 — Pipeline Orchestration |
+| `run-pipeline.js`, `report.js`, `fixer-mock.js`, `fixer-openrouter.js`, `openrouter.js`, `fixer-rules.js`, `site-files.js` | Role 5 — Pipeline Orchestration |
 | `dashboard.html` | Role 6 — Human QA & Demo |
 
 ## Shared fix JSON shape — lock this before anyone starts coding fixers

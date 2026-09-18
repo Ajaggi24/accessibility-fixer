@@ -2,87 +2,272 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accessibility Fixer — Results</title>
 <style>
-  body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #222; }
-  h1 { font-size: 22px; }
-  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd; }
-  th { background: #f5f5f5; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
-  .high { background: #d4edda; color: #155724; }
-  .medium { background: #fff3cd; color: #856404; }
-  .low { background: #f8d7da; color: #721c24; }
-  #status { color: #888; font-style: italic; }
+  :root {
+    --ink:      #14181f;
+    --muted:    #4a5361;
+    --line:     #d8dde5;
+    --bg:       #f7f8fa;
+    --card:     #ffffff;
+    --good:     #0f6b36;
+    --good-bg:  #e7f4ec;
+    --warn:     #7a4c00;
+    --warn-bg:  #fdf3e0;
+    --bad:      #8a1c22;
+    --bad-bg:   #fcebec;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    max-width: 1080px; margin: 0 auto; padding: 32px 20px 80px;
+    color: var(--ink); background: var(--bg); line-height: 1.55;
+  }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 36px 0 12px; }
+  .sub { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+  .sub code { background: #eceff3; padding: 1px 5px; border-radius: 3px; }
+
+  .scoreboard { display: flex; flex-wrap: wrap; gap: 14px; margin: 0 0 8px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 18px; min-width: 150px; flex: 1;
+  }
+  .stat .n { font-size: 30px; font-weight: 700; line-height: 1.1; }
+  .stat .k { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .stat.hero { background: var(--good-bg); border-color: #b9dfc8; }
+  .stat.hero .n { color: var(--good); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 14px; }
+  caption { text-align: left; color: var(--muted); font-size: 13px; padding: 6px 0; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #eef1f5; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; }
+  .snippet { color: var(--bad); background: var(--bad-bg); padding: 1px 4px; border-radius: 3px; display: inline-block; max-width: 340px; overflow-wrap: anywhere; }
+  .newval  { color: var(--good); background: var(--good-bg); padding: 1px 4px; border-radius: 3px; display: inline-block; max-width: 320px; overflow-wrap: anywhere; }
+  .why { color: var(--muted); font-size: 13px; }
+
+  .badge { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+  .high   { background: var(--good-bg); color: var(--good); }
+  .medium { background: var(--warn-bg); color: var(--warn); }
+  .low    { background: var(--bad-bg);  color: var(--bad); }
+
+  .bar { background: #e3e7ee; border-radius: 3px; height: 8px; position: relative; min-width: 90px; }
+  .bar > span { position: absolute; inset: 0 auto 0 0; background: var(--good); border-radius: 3px; }
+
+  .note { background: var(--warn-bg); border-left: 4px solid var(--warn); padding: 10px 14px; border-radius: 0 6px 6px 0; margin: 10px 0; font-size: 14px; }
+  .filters { margin: 10px 0 14px; font-size: 14px; }
+  .filters label { margin-right: 14px; }
+  #status { color: var(--muted); font-style: italic; }
 </style>
 </head>
 <body>
-<h1>Accessibility Fixer — Results</h1>
-<p id="status">Loading reports...</p>
+<h1>Accessibility Fixer</h1>
+<p class="sub" id="meta">Loading reports…</p>
 
-<div id="summary"></div>
-<div id="flagged"></div>
+<p id="status" role="status">Loading reports…</p>
+
+<div id="scoreboard" class="scoreboard"></div>
+<div id="warnings"></div>
+
+<section id="categories" aria-labelledby="cat-h" hidden>
+  <h2 id="cat-h">What was wrong, and what's left</h2>
+  <div id="categories-table"></div>
+</section>
+
+<section id="fixes" aria-labelledby="fix-h" hidden>
+  <h2 id="fix-h">Every fix the agent made</h2>
+  <div class="filters" id="filters"></div>
+  <div id="fixes-table"></div>
+</section>
+
+<section id="flagged" aria-labelledby="flag-h" hidden>
+  <h2 id="flag-h">Held for human review</h2>
+  <p class="sub">The agent refused to auto-apply these: the right answer is a judgement call.
+     This is the confidence gate doing its job, not a failure.</p>
+  <div id="flagged-table"></div>
+</section>
 
 <script>
-// Owner: Role 6 — Human QA & Demo Lead
-// TODO: this loads reports/*.json via fetch, which requires serving this
-// file over http:// (not file://). Use the same `python -m http.server`
-// approach as the target site, pointed at the project root.
+// Owner: Role 6 — Human QA & Demo Lead (rebuilt by Role 5 for the demo).
+//
+// Reads the pipeline's own output — no hardcoded numbers anywhere. It needs
+// http:// (fetch won't read file://), so serve the project root:
+//   python3 -m http.server 8080   ->  http://localhost:8080/dashboard.html
+
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+));
+
+let ALL_FIXES = [];
+let CATEGORY_FILTER = 'all';
 
 async function loadReports() {
   const status = document.getElementById('status');
   try {
-    const [summary, fixes] = await Promise.all([
-      fetch('reports/summary.json').then(r => r.json()),
-      fetch('reports/fixes.json').then(r => r.json())
+    const [summary, fixDiff] = await Promise.all([
+      fetch('reports/summary.json').then((r) => r.json()),
+      fetch('reports/fix-diff.json').then((r) => r.json()).catch(() => [])
     ]);
     status.remove();
-    renderSummary(summary);
-    renderFlagged(fixes.filter(f => f.confidence === 'low'));
+    ALL_FIXES = Array.isArray(fixDiff) ? fixDiff : [];
+    renderMeta(summary);
+    renderScoreboard(summary);
+    renderWarnings(summary);
+    renderCategories(summary);
+    renderFilters();
+    renderFixes();
+    renderFlagged(ALL_FIXES.filter((f) => f.gate === 'held-for-review'));
   } catch (err) {
-    status.textContent = 'Could not load reports/ — run the pipeline first, then serve this folder over http.';
+    status.textContent =
+      'Could not load reports/ — run `node run-pipeline.js` first, then serve this folder over http (not file://).';
     console.error(err);
   }
 }
 
-function renderSummary(summary) {
-  const el = document.getElementById('summary');
-  let rows = summary.byCategory.map(r =>
-    `<tr><td>${r.category}</td><td>${r.before}</td><td>${r.after}</td><td>${r.fixed}</td></tr>`
-  ).join('');
-
-  el.innerHTML = `
-    <h2>Before / after (${summary.totalFixed} of ${summary.totalBefore} fixed)</h2>
-    <table>
-      <tr><th>Category</th><th>Before</th><th>After</th><th>Fixed</th></tr>
-      ${rows}
-    </table>
-  `;
+function renderMeta(s) {
+  const when = s.generatedAt ? new Date(s.generatedAt).toLocaleString() : 'unknown time';
+  document.getElementById('meta').innerHTML =
+    `Scanned <code>${esc(s.target || 'unknown')}</code> with axe-core + pa11y · ` +
+    `fixer mode <code>${esc(s.fixerMode || '?')}</code> · ${esc(when)}`;
 }
 
-function renderFlagged(lowConfidenceFixes) {
-  const el = document.getElementById('flagged');
-  if (!lowConfidenceFixes.length) {
-    el.innerHTML = '<p>No low-confidence fixes flagged.</p>';
-    return;
-  }
+function renderScoreboard(s) {
+  const pct = s.totalBefore ? Math.round((s.totalFixed / s.totalBefore) * 100) : 0;
+  const cards = [
+    { k: 'Fixed and verified', n: `${s.totalFixed}/${s.totalBefore}`, hero: true, note: `${pct}% of all violations` },
+    { k: 'Found by the scanners', n: s.totalBefore },
+    { k: 'Fixes proposed', n: s.fixesProposed },
+    { k: 'Edits written to HTML', n: s.edits ? s.edits.applied : '—' },
+    { k: 'Held for a human', n: s.fixesHeldForReview },
+    { k: 'Still failing', n: s.totalAfter }
+  ];
+  document.getElementById('scoreboard').innerHTML = cards.map((c) => `
+    <div class="stat${c.hero ? ' hero' : ''}">
+      <div class="n">${esc(c.n)}</div>
+      <div class="k">${esc(c.k)}</div>
+      ${c.note ? `<div class="k">${esc(c.note)}</div>` : ''}
+    </div>
+  `).join('');
+}
 
-  let rows = lowConfidenceFixes.map(f => `
+function renderWarnings(s) {
+  const el = document.getElementById('warnings');
+  const notes = [...(s.warnings || [])];
+  // Honesty check: the gate approved N fixes, the applier wrote M edits.
+  // A gap is normal (two scanners reporting the same element under different
+  // selectors), but it should be visible rather than hidden behind the
+  // headline number.
+  if (s.edits && s.edits.unresolved > 0) {
+    notes.push(`${s.edits.unresolved} approved fix(es) could not be matched to an element in the source HTML.`);
+  }
+  if (s.edits && s.edits.unsupported > 0) {
+    notes.push(`${s.edits.unsupported} proposed fix(es) had no safe automatic edit and were skipped.`);
+  }
+  el.innerHTML = notes.map((n) => `<p class="note">${esc(n)}</p>`).join('');
+}
+
+function renderCategories(s) {
+  const rows = (s.byCategory || [])
+    .slice()
+    .sort((a, b) => b.before - a.before)
+    .map((r) => {
+      const pct = r.before ? Math.round((r.fixed / r.before) * 100) : 0;
+      return `<tr>
+        <td>${esc(r.category)}</td>
+        <td class="num">${r.before}</td>
+        <td class="num">${r.after}</td>
+        <td class="num">${r.fixed}</td>
+        <td><div class="bar"><span style="width:${pct}%"></span></div></td>
+      </tr>`;
+    }).join('');
+
+  document.getElementById('categories-table').innerHTML = `
+    <table>
+      <caption>Counts come from two independent scans: the original site, then the repaired copy.</caption>
+      <thead><tr>
+        <th scope="col">Category</th><th scope="col" class="num">Before</th>
+        <th scope="col" class="num">After</th><th scope="col" class="num">Fixed</th>
+        <th scope="col">Progress</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  document.getElementById('categories').hidden = false;
+}
+
+function renderFilters() {
+  const cats = [...new Set(ALL_FIXES.map((f) => f.category))].sort();
+  document.getElementById('filters').innerHTML =
+    `<label><input type="radio" name="cat" value="all" checked> All (${ALL_FIXES.length})</label>` +
+    cats.map((c) => {
+      const n = ALL_FIXES.filter((f) => f.category === c).length;
+      return `<label><input type="radio" name="cat" value="${esc(c)}"> ${esc(c)} (${n})</label>`;
+    }).join('');
+
+  document.getElementById('filters').addEventListener('change', (e) => {
+    CATEGORY_FILTER = e.target.value;
+    renderFixes();
+  });
+}
+
+function renderFixes() {
+  const shown = CATEGORY_FILTER === 'all'
+    ? ALL_FIXES
+    : ALL_FIXES.filter((f) => f.category === CATEGORY_FILTER);
+
+  const rows = shown.map((f) => `
     <tr>
-      <td>${f.rule}</td>
-      <td><span class="badge low">low</span></td>
-      <td>${f.reasoning}</td>
-      <td><!-- TODO Role 6: add your review decision here --></td>
+      <td>${esc(f.category)}<br><span class="why mono">${esc(f.rule)}</span></td>
+      <td><code>${esc(f.element)}</code></td>
+      <td>${f.before ? `<span class="snippet mono">${esc(f.before)}</span>` : '<span class="why">—</span>'}</td>
+      <td><span class="newval mono">${esc(f.proposedFix)}</span></td>
+      <td><span class="badge ${esc(f.confidence)}">${esc(f.confidence)}</span><br>
+          <span class="why">${f.gate === 'held-for-review' ? 'held' : 'applied'}</span></td>
+      <td class="why">${esc(f.reasoning)}</td>
     </tr>
   `).join('');
 
-  el.innerHTML = `
-    <h2>Flagged for human review</h2>
+  document.getElementById('fixes-table').innerHTML = `
     <table>
-      <tr><th>Rule</th><th>Confidence</th><th>Agent's reasoning</th><th>Human decision</th></tr>
-      ${rows}
-    </table>
-  `;
+      <caption>Red = the broken markup the scanner found. Green = what the agent changed it to.</caption>
+      <thead><tr>
+        <th scope="col">Problem</th><th scope="col">Element</th>
+        <th scope="col">Before</th><th scope="col">Fix</th>
+        <th scope="col">Confidence</th><th scope="col">Why</th>
+      </tr></thead>
+      <tbody>${rows || '<tr><td colspan="6">No fixes in this category.</td></tr>'}</tbody>
+    </table>`;
+  document.getElementById('fixes').hidden = false;
+}
+
+function renderFlagged(held) {
+  const el = document.getElementById('flagged-table');
+  if (!held.length) {
+    el.innerHTML = '<p>Nothing was held back on this run.</p>';
+    document.getElementById('flagged').hidden = false;
+    return;
+  }
+  const rows = held.map((f) => `
+    <tr>
+      <td><code>${esc(f.element)}</code></td>
+      <td>${esc(f.proposedFix)}</td>
+      <td class="why">${esc(f.reasoning)}</td>
+      <td><!-- Role 6: your review decision --></td>
+    </tr>
+  `).join('');
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th scope="col">Element</th><th scope="col">Agent's suggestion</th>
+        <th scope="col">Why it needs a human</th><th scope="col">Human decision</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  document.getElementById('flagged').hidden = false;
 }
 
 loadReports();

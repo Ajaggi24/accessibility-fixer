@@ -98,6 +98,20 @@ function categorize(ruleId = '') {
   return 'uncategorized';
 }
 
+// axe attaches machine-readable evidence to each check result (`any`/`all`/
+// `none`). For color-contrast that is the gold we need to compute a REAL fix:
+// { fgColor, bgColor, contrastRatio, expectedContrastRatio, fontSize, fontWeight }.
+// Without this the fixer can only guess a color. Pull the first non-empty
+// data blob off the node and carry it through as violation.data.
+function extractCheckData(node) {
+  for (const group of [node.any, node.all, node.none]) {
+    for (const check of group || []) {
+      if (check?.data && typeof check.data === 'object') return check.data;
+    }
+  }
+  return null;
+}
+
 // Normalize a raw axe-core violation (which nests multiple `nodes`) into one
 // flat record per affected element.
 function normalizeAxeResults(axeResults) {
@@ -111,7 +125,8 @@ function normalizeAxeResults(axeResults) {
         snippet: node.html || '',
         message: violation.help || violation.description || '',
         severity: violation.impact || 'unknown',
-        source: 'axe'
+        source: 'axe',
+        data: extractCheckData(node)
       });
     }
   }

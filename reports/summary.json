@@ -1,67 +1,115 @@
 {
-  "generatedAt": "2026-09-18T20:09:33.104Z",
+  "generatedAt": "2026-09-18T20:44:37.709Z",
   "target": "http://localhost:8001/",
-  "fixerMode": "mock",
+  "siteDir": "target-site/bada11y",
+  "fixerMode": "rules",
   "totalBefore": 85,
-  "totalAfter": 85,
-  "totalFixed": 0,
-  "fixesProposed": 74,
-  "fixesApplied": 72,
-  "fixesHeldForReview": 2,
+  "totalAfter": 11,
+  "totalFixed": 74,
+  "fixesProposed": 82,
+  "fixesApplied": 76,
+  "fixesHeldForReview": 6,
+  "edits": {
+    "requested": 76,
+    "applied": 54,
+    "alreadyFixed": 22,
+    "unresolved": 0,
+    "unsupported": 0,
+    "filesChanged": 1,
+    "outputDir": "target-site-fixed"
+  },
   "byCategory": [
     {
       "category": "contrast",
       "before": 48,
-      "after": 48,
-      "fixed": 0
+      "after": 2,
+      "fixed": 46
     },
     {
       "category": "uncategorized",
-      "before": 11,
-      "after": 11,
-      "fixed": 0
+      "before": 5,
+      "after": 3,
+      "fixed": 2
     },
     {
       "category": "heading-order",
-      "before": 1,
-      "after": 1,
-      "fixed": 0
+      "before": 7,
+      "after": 6,
+      "fixed": 1
     },
     {
       "category": "alt-text",
       "before": 18,
-      "after": 18,
-      "fixed": 0
+      "after": 0,
+      "fixed": 18
     },
     {
       "category": "labels",
       "before": 5,
-      "after": 5,
-      "fixed": 0
+      "after": 0,
+      "fixed": 5
     },
     {
       "category": "keyboard-focus",
       "before": 2,
-      "after": 2,
-      "fixed": 0
+      "after": 0,
+      "fixed": 2
     }
   ],
   "warnings": [],
   "lowConfidenceFixes": [
     {
-      "rule": "tabindex",
-      "category": "keyboard-focus",
-      "element": "#lname",
-      "fix": "tabindex=\"0\"",
-      "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+      "rule": "region",
+      "category": "heading-order",
+      "element": "#home",
+      "snippet": "<section class=\"hero\" id=\"home\">",
+      "fix": "Wrap #home in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
       "confidence": "low"
     },
     {
-      "rule": "tabindex",
-      "category": "keyboard-focus",
-      "element": "#phone",
-      "fix": "tabindex=\"0\"",
-      "reasoning": "PLACEHOLDER fix from fixer-mock.js — replace with real Role 3/4 output once their fixers + a valid ANTHROPIC_API_KEY are wired.",
+      "rule": "region",
+      "category": "heading-order",
+      "element": ".stats-bar",
+      "snippet": "<div class=\"stats-bar\" role=\"presentation\">",
+      "fix": "Wrap .stats-bar in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+      "confidence": "low"
+    },
+    {
+      "rule": "region",
+      "category": "heading-order",
+      "element": ".newsletter > h2",
+      "snippet": "<h2>Stay in the Loop</h2>",
+      "fix": "Wrap .newsletter > h2 in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+      "confidence": "low"
+    },
+    {
+      "rule": "region",
+      "category": "heading-order",
+      "element": ".newsletter > p:nth-child(2)",
+      "snippet": "<p>Exclusive deals, new destinations, and trip reports delivered to your inbox each month.</p>",
+      "fix": "Wrap .newsletter > p:nth-child(2) in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+      "confidence": "low"
+    },
+    {
+      "rule": "region",
+      "category": "heading-order",
+      "element": "input[placeholder=\"Your email address\"]",
+      "snippet": "<input type=\"email\" id=\"email\" placeholder=\"Your email address\">",
+      "fix": "Wrap input[placeholder=\"Your email address\"] in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
+      "confidence": "low"
+    },
+    {
+      "rule": "region",
+      "category": "heading-order",
+      "element": ".legal",
+      "snippet": "<p class=\"legal\">",
+      "fix": "Wrap .legal in a landmark (<main>, <nav>, or <aside>)",
+      "reasoning": "WCAG 1.3.1: this content sits outside any landmark, so screen-reader users can't jump to it with landmark navigation. Which landmark is correct depends on the block's purpose, and wrapping markup automatically risks breaking the layout — held for a human.",
       "confidence": "low"
     }
   ]

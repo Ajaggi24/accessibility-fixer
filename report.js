@@ -44,13 +44,18 @@ export function buildSummary(baseline, after, fixes, meta = {}) {
   return {
     generatedAt: new Date().toISOString(),
     target: meta.target || null,
-    fixerMode: meta.fixerMode || null,       // "mock" | "real"
+    siteDir: meta.siteDir || null,
+    fixerMode: meta.fixerMode || null,       // "rules" | "openrouter" | "real" | "mock"
     totalBefore: baseline.length,
     totalAfter: after.length,
     totalFixed: baseline.length - after.length,
     fixesProposed: fixes.length,
     fixesApplied: meta.applied ?? fixes.filter(f => f.confidence !== 'low').length,
     fixesHeldForReview: meta.held ?? lowConfidence.length,
+    // What the APPLY stage actually wrote to disk. Kept separate from
+    // fixesApplied (which is "what the gate approved") so the report can
+    // never overstate the work: approved-but-unapplied shows up here.
+    edits: meta.apply || null,
     byCategory,
     warnings,
     lowConfidenceFixes: lowConfidence
