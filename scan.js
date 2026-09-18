@@ -47,12 +47,38 @@ async function findChromePath() {
 // Rough rule-id -> our-category map. axe-core and pa11y (which itself wraps
 // HTML_CodeSniffer or axe rulesets) use slightly different rule ids, so we
 // match on substrings to keep this resilient.
+//
+// UPDATED: the original pattern list only covered generic/textbook rule
+// names (image-alt, color-contrast, etc). Our real A11yGoat scan came back
+// with 11 of 12 violations landing in "uncategorized" because axe-core's
+// actual rule ids for this site (aria-required-children, html-has-lang,
+// link-in-text-block, region) weren't matched by anything below. Added
+// explicit patterns for all of them, mapped to the closest-fit category.
 const CATEGORY_PATTERNS = [
   // axe-core ids, plus HTML_CodeSniffer (pa11y) technique ids for the same failures.
   { category: 'alt-text', patterns: ['image-alt', 'img-alt', 'alt-text', 'area-alt', 'input-image-alt', 'role-img-alt', 'object-alt', '.h37', '1_1_1.1.1.1.h37'] },
-  { category: 'contrast', patterns: ['color-contrast', 'contrast', '.g18', '.g145', '1_4_3.g18', '1_4_3.g145'] },
-  { category: 'labels', patterns: ['label', 'aria-label', 'form-field-multiple-labels', 'select-name', 'button-name', 'link-name', '.h91', '.f68', '4_1_2.h91', '1_3_1.f68'] },
-  { category: 'heading-order', patterns: ['heading-order', 'empty-heading', 'page-has-heading', 'p-as-heading'] },
+
+  { category: 'contrast', patterns: [
+    'color-contrast', 'contrast', '.g18', '.g145', '1_4_3.g18', '1_4_3.g145',
+    // Visual-distinguishability issues that aren't literal color-contrast
+    // checks but are the same underlying problem (relying on color alone).
+    'link-in-text-block'
+  ] },
+
+ { category: 'labels', patterns: [
+  'label', 'aria-label', 'form-field-multiple-labels', 'select-name', 'button-name', 'link-name', '.h91', '.f68', '4_1_2.h91', '1_3_1.f68',
+  'aria-required-children', 'aria-required-parent', 'html-has-lang', 'lang',
+  // New: covers aria-input-field-name and the standalone pa11y H57.2 code
+  'aria-input-field-name', 'h57'
+] },
+
+  { category: 'heading-order', patterns: [
+    'heading-order', 'empty-heading', 'page-has-heading', 'p-as-heading',
+    // Document/landmark structure issues — grouped here since both are
+    // about the page's navigable outline, not literal <h1>-<h6> order.
+    'region', 'landmark', 'bypass'
+  ] },
+
   { category: 'keyboard-focus', patterns: ['tabindex', 'focus-order', 'focusable', 'keyboard', 'accesskeys'] }
 ];
 
@@ -170,6 +196,12 @@ export async function runScan(url = TARGET_URL) {
 
   const violations = mergeAndDedupe(axeViolations, pa11yViolations);
   console.log(`[scan.js] ${violations.length} after merge/dedupe`);
+
+  const uncategorizedCount = violations.filter(v => v.category === 'uncategorized').length;
+  if (uncategorizedCount > 0) {
+    console.warn(`[scan.js] WARNING: ${uncategorizedCount} violation(s) still uncategorized — check CATEGORY_PATTERNS for missing rule ids:`);
+    violations.filter(v => v.category === 'uncategorized').forEach(v => console.warn(`  - ${v.rule}`));
+  }
 
   return violations;
 }

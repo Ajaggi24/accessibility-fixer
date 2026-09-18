@@ -1,7 +1,7 @@
 [
   {
     "rule": "aria-required-children",
-    "category": "uncategorized",
+    "category": "labels",
     "element": ".carousel-inner",
     "snippet": "<div class=\"carousel-inner\" role=\"listbox\">",
     "message": "Certain ARIA roles must contain particular children",
@@ -10,7 +10,7 @@
   },
   {
     "rule": "html-has-lang | WCAG2AA.Principle3.Guideline3_1.3_1_1.H57.2",
-    "category": "uncategorized",
+    "category": "labels",
     "element": "html",
     "snippet": "<html>",
     "message": "<html> element must have a lang attribute",
@@ -19,7 +19,7 @@
   },
   {
     "rule": "link-in-text-block",
-    "category": "uncategorized",
+    "category": "contrast",
     "element": "p:nth-child(8) > a",
     "snippet": "<a href=\"https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project\">WebGoat</a>",
     "message": "Links must be distinguishable without relying on color",
@@ -28,7 +28,7 @@
   },
   {
     "rule": "link-in-text-block",
-    "category": "uncategorized",
+    "category": "contrast",
     "element": "p:nth-child(10) > a",
     "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">github public site</a>",
     "message": "Links must be distinguishable without relying on color",
@@ -37,7 +37,7 @@
   },
   {
     "rule": "link-in-text-block",
-    "category": "uncategorized",
+    "category": "contrast",
     "element": "li:nth-child(1) > p:nth-child(2) > a:nth-child(1)",
     "snippet": "<a href=\"http://jazahn.github.io/A11yGoat/\">public site</a>",
     "message": "Links must be distinguishable without relying on color",
@@ -46,7 +46,7 @@
   },
   {
     "rule": "link-in-text-block",
-    "category": "uncategorized",
+    "category": "contrast",
     "element": "p:nth-child(2) > a:nth-child(2)",
     "snippet": "<a href=\"https://github.com/jazahn/A11yGoat/issues\">issue tracker</a>",
     "message": "Links must be distinguishable without relying on color",
@@ -55,7 +55,7 @@
   },
   {
     "rule": "link-in-text-block",
-    "category": "uncategorized",
+    "category": "contrast",
     "element": "a[href$=\"jekyllrb.com/\"]",
     "snippet": "<a href=\"http://jekyllrb.com/\">Jekyll</a>",
     "message": "Links must be distinguishable without relying on color",
@@ -64,7 +64,7 @@
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".active.item > img[alt=\"Perceivable\"]",
     "snippet": "<img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"Perceivable\">",
     "message": "All page content should be contained by landmarks",
@@ -73,7 +73,7 @@
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".active.item > .container > .carousel-caption > h2",
     "snippet": "<h2>Before You Start!</h2>",
     "message": "All page content should be contained by landmarks",
@@ -82,7 +82,7 @@
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".active.item > .container > .carousel-caption > p:nth-child(2)",
     "snippet": "<p>It's important to understand how other people make use of the web. If you don't have experience with a screen reader, try something simple, try the ChromeVox browser extension for Chrome.</p>",
     "message": "All page content should be contained by landmarks",
@@ -91,7 +91,7 @@
   },
   {
     "rule": "region",
-    "category": "uncategorized",
+    "category": "heading-order",
     "element": ".page-content > .wrapper",
     "snippet": "<div class=\"wrapper\">",
     "message": "All page content should be contained by landmarks",
