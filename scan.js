@@ -5,55 +5,171 @@
 // dedupe their results, tag each violation with a category, and write
 // reports/baseline.json.
 //
-// Expected output shape per violation:
+// Output shape per violation:
 // {
 //   rule: string,          // e.g. "image-alt", "color-contrast"
-//   category: "alt-text" | "contrast" | "labels" | "heading-order" | "keyboard-focus",
-//   element: string,       // selector or HTML snippet identifying the element
-//   severity: string,      // whatever the scanner reports, e.g. "error" | "warning"
-//   source: string         // "pa11y" | "axe" | "both"
+//   category: "alt-text" | "contrast" | "labels" | "heading-order" | "keyboard-focus" | "uncategorized",
+//   element: string,       // selector identifying the element
+//   snippet: string,       // HTML snippet for context, when available
+//   message: string,       // human-readable description of the problem
+//   severity: string,      // "error" | "warning" | "notice"
+//   source: "pa11y" | "axe" | "both"
 // }
 
 import fs from 'fs/promises';
+import path from 'path';
+import puppeteer from 'puppeteer';
+import pa11y from 'pa11y';
 import 'dotenv/config';
 
-const TARGET_URL = process.env.TARGET_SITE_URL || 'http://localhost:8000';
+const TARGET_URL = process.env.TARGET_SITE_URL || 'http://localhost:8000/A11yGoat/';
 
-function categorize(rule) {
-  // TODO: Role 2 — map real pa11y/axe rule ids to our five categories.
-  // This is a rough starting point, expand as you see real rule names.
-  const map = {
-    'image-alt': 'alt-text',
-    'color-contrast': 'contrast',
-    label: 'labels',
-    'heading-order': 'heading-order',
-    'focus-order-semantics': 'keyboard-focus'
-  };
-  return map[rule] || 'uncategorized';
+// Puppeteer's own auto-downloaded Chrome build didn't run cleanly in this
+// environment; fall back to the system Google Chrome install if present.
+// Override with PUPPETEER_EXECUTABLE_PATH in .env if your machine differs.
+const CHROME_CANDIDATES = [
+  process.env.PUPPETEER_EXECUTABLE_PATH,
+  '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+].filter(Boolean);
+
+async function findChromePath() {
+  for (const candidate of CHROME_CANDIDATES) {
+    try {
+      await fs.access(candidate);
+      return candidate;
+    } catch {
+      // try next
+    }
+  }
+  return undefined; // let puppeteer use its own default
+}
+
+// Rough rule-id -> our-category map. axe-core and pa11y (which itself wraps
+// HTML_CodeSniffer or axe rulesets) use slightly different rule ids, so we
+// match on substrings to keep this resilient.
+const CATEGORY_PATTERNS = [
+  // axe-core ids, plus HTML_CodeSniffer (pa11y) technique ids for the same failures.
+  { category: 'alt-text', patterns: ['image-alt', 'img-alt', 'alt-text', 'area-alt', 'input-image-alt', 'role-img-alt', 'object-alt', '.h37', '1_1_1.1.1.1.h37'] },
+  { category: 'contrast', patterns: ['color-contrast', 'contrast', '.g18', '.g145', '1_4_3.g18', '1_4_3.g145'] },
+  { category: 'labels', patterns: ['label', 'aria-label', 'form-field-multiple-labels', 'select-name', 'button-name', 'link-name', '.h91', '.f68', '4_1_2.h91', '1_3_1.f68'] },
+  { category: 'heading-order', patterns: ['heading-order', 'empty-heading', 'page-has-heading', 'p-as-heading'] },
+  { category: 'keyboard-focus', patterns: ['tabindex', 'focus-order', 'focusable', 'keyboard', 'accesskeys'] }
+];
+
+function categorize(ruleId = '') {
+  const id = ruleId.toLowerCase();
+  for (const { category, patterns } of CATEGORY_PATTERNS) {
+    if (patterns.some((p) => id.includes(p))) return category;
+  }
+  return 'uncategorized';
+}
+
+// Normalize a raw axe-core violation (which nests multiple `nodes`) into one
+// flat record per affected element.
+function normalizeAxeResults(axeResults) {
+  const out = [];
+  for (const violation of axeResults.violations || []) {
+    for (const node of violation.nodes || []) {
+      out.push({
+        rule: violation.id,
+        category: categorize(violation.id),
+        element: node.target?.join(' ') || '',
+        snippet: node.html || '',
+        message: violation.help || violation.description || '',
+        severity: violation.impact || 'unknown',
+        source: 'axe'
+      });
+    }
+  }
+  return out;
+}
+
+// Normalize raw pa11y issues into the same flat shape.
+function normalizePa11yResults(pa11yResults) {
+  return (pa11yResults.issues || []).map((issue) => ({
+    rule: issue.code || 'unknown',
+    category: categorize(issue.code || ''),
+    element: issue.selector || '',
+    snippet: issue.context || '',
+    message: issue.message || '',
+    severity: issue.type || 'unknown', // pa11y: error | warning | notice
+    source: 'pa11y'
+  }));
+}
+
+// Two violations are "the same" if they point at the same element AND land
+// in the same category (rule ids differ between scanners, e.g. axe's
+// "image-alt" vs pa11y/HTML_CS's "1_1_1.1.1.1.H37", but the category map
+// normalizes that). When both scanners flag it, keep one record tagged
+// source: "both" and prefer axe's richer message/snippet.
+function mergeAndDedupe(axeViolations, pa11yViolations) {
+  const merged = new Map();
+  const keyFor = (v) => `${v.category}::${v.element}`;
+
+  for (const v of axeViolations) {
+    merged.set(keyFor(v), { ...v });
+  }
+
+  for (const v of pa11yViolations) {
+    const key = keyFor(v);
+    if (merged.has(key)) {
+      const existing = merged.get(key);
+      existing.source = 'both';
+      // keep axe's message/snippet (already there), but merge rule ids so
+      // downstream triage can see both scanners' rule codes.
+      existing.rule = existing.rule.includes(v.rule) ? existing.rule : `${existing.rule} | ${v.rule}`;
+    } else {
+      merged.set(key, { ...v });
+    }
+  }
+
+  return [...merged.values()];
+}
+
+async function runAxeScan(url, executablePath) {
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath
+  });
+  try {
+    const page = await browser.newPage();
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+
+    const axeSource = await fs.readFile(
+      path.join(process.cwd(), 'node_modules', 'axe-core', 'axe.min.js'),
+      'utf8'
+    );
+    await page.evaluate(axeSource);
+    const axeResults = await page.evaluate(async () => {
+      // eslint-disable-next-line no-undef
+      return await axe.run();
+    });
+    return normalizeAxeResults(axeResults);
+  } finally {
+    await browser.close();
+  }
+}
+
+async function runPa11yScan(url, executablePath) {
+  const results = await pa11y(url, {
+    chromeLaunchConfig: { executablePath }
+  });
+  return normalizePa11yResults(results);
 }
 
 export async function runScan(url = TARGET_URL) {
-  // TODO: Role 2 — replace this stub with real pa11y + axe-core calls.
-  //
-  // e.g.
-  // import pa11y from 'pa11y';
-  // const pa11yResults = await pa11y(url);
-  //
-  // For axe-core you'll likely want to run it inside a headless browser
-  // (puppeteer/playwright) since axe-core itself runs in-page.
+  const executablePath = await findChromePath();
 
-  console.log(`[scan.js] STUB: would scan ${url} here`);
+  console.log(`[scan.js] Scanning ${url} with axe-core + pa11y...`);
+  const [axeViolations, pa11yViolations] = await Promise.all([
+    runAxeScan(url, executablePath),
+    runPa11yScan(url, executablePath)
+  ]);
 
-  const violations = [
-    // Remove this once real scanning is wired up.
-    {
-      rule: 'image-alt',
-      category: categorize('image-alt'),
-      element: '<img src="hero.jpg">',
-      severity: 'error',
-      source: 'stub'
-    }
-  ];
+  console.log(`[scan.js] axe found ${axeViolations.length} issues, pa11y found ${pa11yViolations.length} issues`);
+
+  const violations = mergeAndDedupe(axeViolations, pa11yViolations);
+  console.log(`[scan.js] ${violations.length} after merge/dedupe`);
 
   return violations;
 }
